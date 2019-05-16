@@ -1,0 +1,239 @@
+﻿P-Po zmianie w plikach konfiguracyjnych programu GRUB:
+T-zmiany NIE SĄ automatycznie wprowadzone po zmianie zawartości plików
+T-należy wydać polecenie update-grub jako root, aby konfiguracja nowa konfiguracja została wprowadzona
+N-zmiany od razu nie są wprowadzone, zaraz po zmianie pliku
+N-plików konfiguracyjnych GRUBa nie wolno edytować (jest to robione automatycznie przez system)
+P-Wksaż poprawne zdanie na temat dysku /dev/sdd3
+N-Jest to czwarta partycja czwartego dysku SATA
+N-Jest to czwarta partycja trzeciego dysku SATA
+N-Oznaczenie nie jest poprawne
+T-Jest to trzecia partycja czwartego dysku SATA
+P-Czym charakteryzuje się plik konfiguracyjny "grub.cfg" menedżera GRUB 2, znajdujący się standardowo w katalogu "/boot/grub"?
+N-Jest to jedyny plik konfiguracji GRUB 2, którego własnoręczna edycja nie jest odradzana
+T-Nie powinien być bezpośrednio edytowany przez użytkownika.
+T-Może zostać nadpisany w wyniku polecenia "update-grub".
+T-Zawiera wpisy dotyczące uruchamianych systemów operacyjnych.
+P-Polecenie mount -a
+N-montuje wszystkie systemy plików wylistowane w pliku /etc/fstab
+T-montuje systemy plików wylistowane w pliku /etc/fstab, które nie korzystają z opcji noauto
+N-może być wykonane przez dowolnego użytkownika
+T-zarezerwowane jest tylko dla roota
+P-Wskaż, które z poniższych twierdzeń odnoszących się do pliku konfiguracyjnego "/etc/fstab" są poprawne.
+T-Definiując poszczególne systemy plików możemy posłużyć się zarówno unikalnym identyfikatorem dysku, jak i nazwą urządzenia.
+N-Edytując plik użytkownik może wskazać jako miejsce montowania nieistniejący katalog, w trakcie uruchomienia systemu, katalog taki zostanie utworzony.
+T-Plik ten zawiera informację na temat wszystkich systemów plików, które powinny być montowane w trakcie uruchamiania systemu.
+T-Do edycji pliku wymagane są uprawnienia administratora.
+P-Używając bootloader'a GRUB2:
+T-hd1 oznacza drugi dysk w systemie (/dev/sdb)
+N-hd1 oznacza pierwszy dysk w systemie (/dev/sda)
+T-setroot(hd0, 1) odwoła się do pierwszej partycji pierwszego dysku (dev/sda1)
+N-setroot(hd0, 1) odwoła się do drugiej partycji pierwszego dysku (dev/sda2)
+P-Co spowoduje dodanie następującego wpisu do pliku /etc/grub.d/40_custom 
+ menuentry "Windows" { 
+ set root='(hd0,1)' 
+ chainloader + 1 
+ }
+N-Podczas startu bootloadera będziemy mogli wybrać system o nazwie "Windows" i będzie one pierwszy na liście dostępnych systemów.
+N-Jest to niepoprawny wpis.
+T-Podczas startu bootloadera będziemy mogli wybrać system o nazwie "Windows", znajdujący się na dysku "hd0".
+T-W celu załadowania systemu Windows sterowanie zostanie przekazane do pierwszego sektora z podanej partycji (zostanie uruchomiony kod, który się tam znajduje).
+P-Program Grub pozwala na:
+N-Rekompilację jądra Linux
+T-Automatyczne uruchomienie wybranego systemu z pominięciem wyświetlania ekranu wyboru.
+N-Zarządzanie dyskami i ich partycjonowanie
+T-Wybór systemu operacyjnego, który będzie uruchomiony.
+P-Parametr ro w opcjach montowania pliku /etc/fstab oznacza, że:
+N-możliwy jest zapis i odczyt na danym systemie plików
+T-system plików jest zamontowany w trybie tylko do odczytu
+N-urządzenie może być montowane przez użytkownika
+N-system plików może być montowany przez każdego użytkownika
+P-W jaki sposób dodajemy informacje o innych systemach opracyjnych do GRUB2
+T-Do pliku /etc/grub.d/40_custom dodajemy wpis o systemie, następnie uruchamiamy polecenie sudo update-grub2
+N-Należy wykonać polecenie grub2-add-new-os z prawami użytkownika
+T-Można nadać prawa wykonywania skryptowi: /etc/grub.d/30_os-prober. Grub2 podczas aktualizacji wyszuka dostępne systemy operacyjne na dyskach twardych
+N-GRUB2 sam wykryje wszystkie systemy operacyjne bez konfiguracji
+P-Plik /boot/grub.cfg dla GRand United Bootloader w wersji 2:
+T-posiada definicje wszystkich systemów uruchamianych przez niego
+T-w przypadku edycji za każdym razem musi być zaktualizowany za pomocą polecenia update-grub
+T-Tworzony jest automatycznie na podstawie skryptów znajdujących się w katalogu /etc/grub.d/
+N-Tworzony jest automatycznie na podstawie konfiguracji zdefiniowanej w pliku /etc/grub/default
+P-Wskaż, które z poniższych twierdzeń odnoszących się do bootmanagera GRUB2 są poprawne.
+N-Aby zablokować możliwość wykonywania się danego skryptu podczas aktualizacji GRUB'a wystarczy odebrać mu uprawnienia do odczytu.
+T-Lista zdefiniowanych, uruchamianych przez GRUB2 systemów operacyjnych zdefiniowana jest w pliku "/boot/grub/grub.cfg".
+T-Wywołanie polecenia "update-grub" powoduje uruchomienie skryptów umieszczonych w katalogu "/etc/grub.d"
+N-Po wywołaniu polecenia "update-grub" skrypt "30_os-prober" zostanie uruchomiony przed skryptem "10_linux".
+P-Jakim poleceniem tworzony (bądź aktualizowany) jest plik konfiguracyjny /boot/grub.grub.cfg?
+N-grub-config
+N-grub-install
+N-grub-refresh
+T-update-grub
+P-Na jednym fizycznym komputerze, na osobnych partycjach są zainstalowane systemy Ubuntu Linux i Windows 7. Przy obecnej konfiguracji użytkownik ma możliwość (przy użyciu bootmanagera GRUB 2) uruchomienia TYLKO systemu Ubuntu. W jaki sposób można zapeewić użytkownikowi możliwość wyboru systemu operacyjnego przy uruchamianu komputera?
+T-Należy utworzyć własny plik z odpowiednim wpisem systemu oraz prawami uruchamiania w /etc/grub.d/, a następnie zaktualizować pliki konfiguracyjne GRUB'a
+T-Dodać odpowiedni wpis w pliku /boot/grub/grub.cfg
+N-Należy włożyć dysk instalacyjny Windowsa i z linii poleceń, za pomocą komendy bootrec /fixmbr zainstalować w MBR bootloader dla systemu Windows
+T-Ustawić prawa uruchamiania dla skryptu /etc/grub.d/30_os-prober oraz uruchomić update-grub
+P-Zaznacz, które z podanych plików w systemach z rodziny Linux zawierają informacje o systemach, które mają zostać automatycznie zamontowane przy uruchomieniu systemu operacyjnego.
+N-/boot/grub/grub.cfg
+N-/etc/default/grub
+N-/etc/mtab
+T-/etc/fstab
+P-Wskaż wszystkie poprawne odpowiedzi dotyczące bootmanagera GRUB2
+T-Skrypty konfiguracyjne znajdujące się w katalogu /etc/grub.d/ uruchamiane są w momencie wywołania grub-update
+N-Nie wymaga aktualizowania pliku /etc/boot/grub.cfg po wprowadzeniu zmian do pliku konfiguracyjnego /etc/default/grub - zawartość tego pliku odczytywana jest na bieżąco w momencie uruchamiania systemu.
+T-Jest domyślnym managerem bootowania systemu Linux Ubuntu od dystrybucji 9.10
+T-Plik /boot/grub/grub.cfg jest jednym z najistotniejszych plików konfiguracyjnych managera GRUB2
+P-Program fdisk
+T-Pozwala na sformatowanie wybranej partycji
+T-Wywołany z parametrem -i wyświetla tablice partycji dla podanych urządzeń
+N-Pozwala na obsługę tablicy partycji systemu linux
+N-Zmiany wprowadzone za pomocą tego programu automatycznie modyfikują zawartość plików /etx/fstab i /etc/mtab
+P-Jeżeli nie chcemy, aby konfiguracja zdefiniowana w pewnym skrypcie konfiguracyjnym GRUBA znajdującym się w katalogu /etc/grub.d/ była uwzględniona po wykonaniu polecenia update-grub, należy:
+N-Zabrać temu skryptowi uprawnienia zapisu
+N-Wprowadzić odpowiednie zmiany w pliku /etc/default/grub
+N-Zabrać temu skryptowi uprawnienia odczytu
+T-Zabrać temu skryptowi uprawnienia wykonywalności
+P-Plik /etc/fstab zawiera informacje o:
+T-systemach plików montowanych podczas uruchomienia systemu
+N-aktualnie zamontowanych systemach plików
+N-tablicach partycji na aktualnie podłączonych dyskach
+N-mapowaniu identyfikatorów UUID na oznaczenia linuksowe (sda, sdb, itd.)
+P-Wskaż prawdziwe zdania:
+T-Plik /boot.grub/grub.cfg jest generowany automatycznie na podstawie skryptów z katalogu /etc/grub.d/
+T-Pod Windowsem możliwe jest odczytywanie partycji ext2/ext3 za pomocą dodatkowego oprogramowania
+N-Pod Linuksem jest możliwość obsługi partycji NTFS, ale jedynie w trybie do odczytu
+N-GRUB jest w stanie uruchamiać jedynie Linuksa i Windowsa
+P-Domyślnie skrypt /etc/grub.d/30_os-prober
+N-ustawia tło, kolory tekstu, motyw graficzny
+N-lokalizuje jądra hurd
+N-lokalizuje jądro Linuksa
+T-wyszukuje w każdej partycji systemów operacyjnych i integruje je w startowym menu
+P-Plik /etc/mtab przechowuje informacje o:
+N-Systemach plików montowanych przy starcie systemu
+T-Aktualnie zamontowanych systemach plików
+N-Systemach plików oczekujących na zamontowanie w systemie
+N-Systemach plików, które z jakiś powodów nie mogły zostać zamontowane i pojawić się tym samym pliku /etc/fstab
+P-Dodanie systemu operacyjnego do menu GRUB'a może nastąpić w wyniku
+T-wykonania standardowego skryptu 30_os-prober, a następnie wykonania polecenia update-grub
+T-stworzenia własnego skryptu w katalogu /etc/grub.d/, a następnie wykonania polecenia update-grub
+N-dodania odpowiedniego wpisu do pliku device.map, a następnie wykonania polecenia update-grub
+T-dodania odpowiedniego wpisu do pliku 40_custom, a następnie wykonania polecenia update-grub
+P-Wskaż wszystkie poprawne zdania odnoścnie pliku device.map
+T-Ręczna zmiana pliku device.map wymaga aktualizacji konfiguracji GRUBa
+T-Zawiera zmapowane nazwy urządzeń GRUBa na nazwy Linuxowe
+N-Po każdym restarcie systemu zapisywana jest do niego aktualna struktura dysków.
+N-W wersji bootloadera GRUB2 plik ten nie istnieje
+P-Parametr ro w opcjach montowania pliku etc/fstab oznacza, że:
+N-możliwy jest zapis i odczyt na danym systemie plików
+T-system plików jest zamontowany w trybie tylko do odczytu
+N-urządzenie może być montowane przez użytkownika
+N-system plików może być montowany przez każdego użytkownika
+P-Dodajemy własny wpis do menu GRUB2. Które z poniższych wartości parametru "setroot" bloku menuentry są poprawne?
+N-setroot = (hda,1)
+T-setroot = (hd0, msdos1)
+N-setroot = (sda,1)
+T-setroot = (hd0,1)
+P-Informacje na temat wszystkich systemów plików, które mają być montowane podczas uruchamiania systemu znajdują się w pliku:
+N-/mnt
+T-/etc/fstab
+N-/etc/default/fstab
+N-/etc/mtab
+P-Plik /boot/grub/grub.cfg zawiera:
+T-tryb, w jakim ma się ładować system.
+T-liste systemów operacyjnych, które można uruchomić za pomocą GRUBa
+T-informację o tym, który system jest systemem domyślnym.
+T-czas oczekiwania na wybór systemu przez użytkownika, po upływie którego uruchomi się domyślny system.
+P-Plik /boot/grub/grub.cfg:
+T-Aktualizowany jest poleceniem update-grub
+T-Zawiera definicje systemów operacyjnych możliwych do uruchomienia przez program rozruchowy
+T-Nie powinien być ręcznie modyfikowany
+N-Jest tworzony tylko na podstawie konfiguracji zdefiniowanej w /etc/default/grub
+P-Jakie informacje na temat zamontowanych systemów plików znajdują się w /etc/fstab?
+N-Data zamontowania urządzenia.
+T-Miejsce zamontowania systemu plików
+T-Typ systemu plików.
+N-Wielkość partycji.
+P-Zaznacz zdania poprawne dotyczące odwoływania się do systemów plików w systemie Linux.
+T-/dev/fd0 - oznacza dyskietkę
+T-/dev/hdd2 - oznacza drugą partycję znajdującą się na dysku "slave" podpiętego do drugiego kontrolera IDE.
+N-/dev/sda1 - oznacza pierwszą partycję pierwszego dysku SCSII lub drugą partycję na kontrolerze SATA1.
+N-/dev/ssd1 - oznacza pierwszą partycję dysku stworzonego w oparciu o technologię SSD
+P-Plik /etc/fstab:
+T-może być modyfikowany przez administratora systemu
+N-zawiera informacje o aktualnie zalogowanych użytkownikach
+T-Jest odczytywany w trakcie uruchamiania systemu operacyjnego
+T-zawiera informacje o systemach plików, jakie mają być montowane w trakcie uruchamiania systemu.
+P-Na jednej maszynie zainstalowane są systemy Windows 7 oraz Ubuntu Linux:
+T-W systemie Linux możemy zamontować partycję Windowsową jako katalog korzystając z polecenia mnt.
+N-W systemie Windows dostęp do partycji Linuxowych konfigurowany jest automatycznie.
+T-W pliku /etc/fstab znajduje się przyporządkowanie partycji ich punktom montowania
+T-Przy starcie systemu Linux partycje Windowsowe są montowane automatycznie, jeśli dodamy odpowiedni wpis do pliku /etc/fstab
+P-Plik o domyślnej nazwie „/etc/grub.d/40_custom” służy do:
+T-Tworzenia własnych wpisów w menu bootloadera.
+N-Zmiany czasu oczekiwania na wybór systemu przez użytkownika.
+N-Zaimportowania parametrów zdefiniowanych w pliku „/etc/default/grub”
+N-Ustawiania elementów wizualnych bootloadera.
+P-Informacje na temat wszystkich systemów plików, które mają być montowane podczas uruchamiania systemu znajdują się w pliku:
+N-/etc/mtab
+N-/etc/default/fstab
+N-/mnt
+T-/etc/fstab
+P-Aby zmienić ustawienia menu GRUB2 (np. zwiększyć czas oczekiwania na wybór systemu operacyjnego) POWINNO SIĘ:
+N-w konsoli wpisać komendę: sudo update-grub z odpowiednim parametrem
+N-wpisać odpowiednie polecenie w linii komend po uruchomieniu menu GRUB2
+N-edytować plik konfiguracyjny /boot/grub/grub.cfg
+T-edytować odpowiedni skrypt z /etc/grub.d/
+P-Zaznacz prawdziwe zdania dotyczące partycji wymiany (SWAP) w systemie Linux:
+T-Domyślnie jest na niej zapisywany zrzut pamięci RAM przy hibernacji
+T-Można go aktywować i dezaktywować podczas działania systemu
+N-Jest zamontowana w katalogu /swap
+N-Jest konieczna do działania systemu Linux
+P-Aby dodać system do listy rozruchowej w programie GRUB2 należy:
+N-Ręcznie zaktualizować plik /boot/grub/grub.cfg
+T-Dodać odpowiedni skrypt do katalogu /etc/grub.d/
+N-Program GRUB2 posiada interfejs graficzny i każdą zmianę należy wykonywać tylko i wyłącznie w środowisku graficznym.
+T-Zaktualizować plik /boot/grub/grub.cfg poleceniem update-grub
+P-Jeżeli do plików lub skryptów konfiguracyjnych managera bootwania GRUB wprowadzimy jakieś zmiany, musimy zaktualizować plik grub.cfg za pomocą polecenia:
+N-new-grub
+T-update-grub
+N-grub-update
+N-grub-mkdevicemap
+P-Program Grub pozwala na:
+T-Wybór systemu operacyjnego, który będzie uruchomiony.
+N-Rekompilację jądra Linux
+T-Automatyczne uruchomienie wybranego systemu z pominięciem wyświetlania ekranu wyboru.
+N-Zarządzanie dyskami i ich partycjonowanie
+P-W jaki sposób dodajemy informacje o innych systemach operacyjnych do GRUB2?
+N-GRUB2 sam wykryje wszystkie systemy operacyjne bez konfiguracji
+T-Można nadać prawa wykonywania skryptowi:/etc/grub.d/30_os-prober. Grub2 podczas aktualizacji wyszuka dostępne systemy operacyjne na dyskach twardych
+N-Należy wykonać polecenie grub2-add-new-os z prawami użytkownika
+T-Do pliku /etc/grub.d/40_custom dodajemy wpis o systemie, następnie uruchamiamy polecenie sudo update-grub2
+P-Wskaż poprawne nazewnictwa partycji i dysków w GRUB z odpowiednim dla niego wyjaśnieniem:
+N-(hd0,0) – pierwsza partycja na pierwszym dysku
+T-(hd0,msdos5) oznacza pierwszą partycję rozszerzoną (extended)
+N-(sda2,2) – trzecia partycja na drugim dysku
+N-(hd3,2) – trzecia partycja na drugim dysku
+P-Zaznacz poprawne odpowiedzi dotyczące pliku /etc/fstab
+N-jest automatycznie modyfikowany podczas użycia polecenia mount
+T-jest on odczytywany w trakcie uruchamiania systemu
+T-zawiera informacje na temat znajdujących się w systemie dysków twardych, ich partycji oraz punktów i parametrów montowania
+N-nie jest odczytywany w trakcie uruchamiania systemu
+P-Mówiąc o wymianie danych między systemem Linux a system Windows prawdą jest, że:
+T-System Linux nie wymaga dodatkowego oprogramowania, aby uzyskać dostęp do partycji NTFS
+N-W systemie Linux tylko root może zapisywać na partycji NTFS
+N-Dostępne oprogramowanie dla systemu Windows nie pozwala na modyfikowanie plików zapisanych na partycji Ext3
+N-System Windows nie wymaga dodatkowego oprogramowania, aby uzyskać dostęp do partycji Ext3
+P-Co znajduje się w katalogu /dev/disk/by-uuid ?
+T-Linki symboliczne do wszystkich partycji zamontowanych obecnie w systemie
+N-Nie ma takiego folderu
+N-Linki symboliczne do wszystkich urządzeń fizycznych podłączonych do komputera
+T-Informacja na temat tego, jakie UUIDy zostały przypisane poszczególnym urządzeniom (partycjom) w systemie.
+P-Wskaż poprawne zdania na temat oznaczenia dysku /dev/ssd3"
+N-Jest to czwarta partycja czwartego dysku SATA
+N-Jest to czwarta partycja trzeciego dysku SATA
+T-Jest to trzecia partycja czwartego dysku SATA
+N-Oznaczenie nie jest poprawne
+P-Plikiem konfiguracyjnym managera bootowania GRUB2 jest :
+T-/boot/grub/grub.cfg
+N-/boot/grub/grub.exe
+N-/boot/grub/grub.txt
+N-/boot/grub/grub.xml

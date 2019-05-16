@@ -1,0 +1,448 @@
+﻿P-Polecenie> get-childitem C:ntestn* -include *.txt -recurse | remove-item
+T-Znajduje i usuwa wszystkie pliki z rozszerzeniem .txt z folderu "C:\test" i podfolderów.
+N-Znajduje i usuwa wszystkie pliki z rozszerzeniem .txt z folderu "C:\test", bez podfolderów.
+N-Znajduje i wypisuje wszystkie pliki z rozszerzeniem .txt z folderu "C:\test", bez podfolderów.
+N-Jest niepoprawne}
+P-Które wersje systemu Windows NIE wpierają PowerShella?
+T-Windows 2000 SP4
+T-Windows 2000
+N-Windows Server 2008
+N-Windows 7}
+P-Które polityki wykonywania skryptów w PowerShell zabraniają wykonywania skryptów pochodzących z lokalnego komputera, jeśli skrypty te nie są podpisane przez zaufanego wydawcę?
+T-Restricted
+T-AllSigned
+N-RemoteSigned
+N-Unrestricted}
+P-Po wykonaniu poniższego skryptu w PowerShell
+ przedmiot = "DSO" if ($przedmiot -eq "DSO") {"Dedykowane Systemy Operacyjne"} elseif ($przedmiot -eq "PK") {"Programowanie Komputerów"} else {"Nieznany przedmiot"}
+N-Na ekranie zostanie wyświetlony napis "Nieznany przedmiot".
+T-Wartość zmiennej $przedmiot nie ulegnie zmianie.
+N-Na ekranie pojawi się komunikat o błędzie składniowym.
+N-Do zmiennej $przedmiot zostanie przypisana wartość "Dedykowane Systemy Operacyjne".}
+P-Aby zwrócić wszystkie obiekty w bieżącej lokalizacji nalezy użyć polecenia:
+T-Get-children
+N-Copy-item
+N-Get-content
+N-Get-process}
+P-Polecenie "PS> get-process d* | stop-process"
+T-poszczególne polecenia należą do tzw. poleceń Cmdlet. (należy do poleceń Cmdlet - inna odpowiedź)
+N-zatrzymuje wszystkie uruchomione procesy.
+N-zatrzymuje wszystkie procesy działające na partycji D.
+T-zatrzymuje wszystkie procesy których nazwa rozpoczyna się literą "d".}
+P-Aby zwrócić wszystkie obiekty w bieżącej lokalizacji należy użyc polecenia:
+N-Get-process
+N-Copy-item
+N-Get-content
+T-Get-children}
+P-Zaznacz poprawne przyporządkowania aliasów do Cmdletów
+N-taskkill -> Kill-Process
+T-ls -> Get-ChildItem
+T-help -> Get-Help
+T-man -> Get-Help}
+P-Polecenie Get-EventLog w Windows PowerShell pozwala:
+N-Zapisywać informacje do dziennika zdarzeń.
+N-Takie polecenie nie istnieje.
+T-Pobierać wpisy z dziennika zdarzeń.
+N-Pobierać wpisy z pliku C:\Var\Log\Messages.}
+P-Polecenia natywne dla Windows PowerShell, które pozwalają na wykonywanie podstawowych operacji na obiektach w środowisku WPS to:
+N-Potoki (pipelines)
+T-Aplety poleceń (cmdlets)
+N-Aplety skryptowe (scriptlets)
+N-Komendy linii poleceń (line commands)}
+P-Wskaż wszystkie poprawne zdania dotyczące interpretera Windows PowerShell:
+T-PowerShell jest oparty o .NET
+N-PowerShell nie udostępnia mechanizmów potoku.
+T-PowerShell pozwala ustawić różne polityki kontrolujące jakie skrypty można uruchomić.
+N-PowerShell jest kompatybilny z bashem.}
+P-Polityka Restricted wykonywania plików:
+T-Jest domyślną polityką w środowisku PowerShell.
+N-Pozwala na uruchamianie skryptów z rozszerzeniem .ps1.
+N-Nie pozwala na wykonywanie komend w oknie interpretera.
+N-Pozwala na uruchamianie skryptów z rozszerzeniem .ps1xml.}
+P-Które polecenie wypisze zawartość bieżącego katalogu z pominięciem plików o rozszerzeniu .exe?
+N-Dir *.exe
+T-gci -exclude *.exe
+T-Get-Childitem -exclude *.exe
+N-ls -include *.exe}
+P-Wskaż poprawne polecenia PowerShell usuwające z bieżącego katalogu pliki większe niż 2kB:
+N-Get-Childitem |  Where-Object ( $_.length > 2kB ) | Remove-Item
+N-Get-Childitem | Remove-Item | Where ( $_.length > 2kB )
+T-Get-Childitem | Where-Object ( $_.length -gt 2kB ) | Remove-Item
+T-ls | where-object { $_.length -gt 2kB } | rm}
+P-Polecenie "PS> get-process | where-object { $_.WS -gt 300MB } | stop-process" wydane w interpreterze Windows PowerShell:
+N-Listuje procesy, które zużywają więcej niż 300 MB.
+N-Szuka procesu, który zużywa więcej niż 300 MB i wyświetla nazwę.
+T-Szuka procesu, który zużywa więcej niż 300 MB i zatrzymuje go.
+N-Szuka procesu, który zużywa mniej niż 300 MB i zatrzymuje go.}
+P-Która z wersji systemu Windows obsługuje interpreter PowerShell?
+T-Windows Vista
+T-Windows 7
+T-Windows XP SP2/SP3
+N-Windows 95}
+P-Polecenie Set-Location w Cmdlets (PowerShell) ma swój odpowiednik w interpreterze komend cmd.exe. Jest to:
+T-chdir
+N-set
+N-sloc
+T-cd}
+P-Które z poleceń są poprawnymi podstawowymi aliasami w Windows PowerShell, służącymi do czyszczenia ekranu?\textsl{}
+N-Clear-Console
+N-Clear-Host
+T-clear
+T-cls}
+P-W celu zatrzymania procesów zużywających więcej niż 100MB pamięci RAM należy użyć polecenia:
+N-PS> stop-process | where-object { $_.WS -gt 100MB }
+N-PS> stop-process $Memory -gt 100MB
+N-PS> get-process | where-object { $Memory -gt 100MB } | stop-process
+T-PS> get-process | where-object { $_.WS -gt 100MB } | stop-process}
+P-Zaznacz poprawne zdania dotyczące powłoski PowerShell:
+T-Wszystkie zmienne są obiektami .NET.
+T-Do zmiennych odwołuje się używając znaku $.
+N-Część zmiennych jest obiektami .NET.
+N-Do zmiennych odwołuje się używając znaku #.}
+P-Za pomocą polecenia: Get-Childitem C:\Work\ -Recurse -Force | Measure-Object -property length -sum (Komentarz: polecenie measure-object służy do generowania statystyk)
+T-Znajdziemy liczbę plików i ich całkowity rozmiar w folderze C:\Work oraz w podfolderach.
+N-Wypiszemy zawartość folderu C:\Work.
+N-Wypiszemy największy plik z folderu C:\Work.
+N-Jest to niepoprawna składnia.}
+P-Aby usunąć wszystkie pliki z katalogu c:\temp\o rozszerzeniu .xls w Windows PowerShell należy użyć polecenia:
+T-remove-item c:\temp\*.xls
+T-get-childitem c:\temp\*.xls | foreach-object { remove-item $_.fullname }
+N-remove-item c:\temp\* -exclude *.xls
+N-remove-file c:\temp\* -extension xls}
+P-Polecenie: PS> get-childitem C:\test\* -include *.txt -recurse | remove-item
+T-Znajduje i usuwa wszystkie pliki z rozszerzeniem .txt z folderu "C:\test" i podfolderów
+N-Znajduje i usuwa wszystkie pliki z rozszerzeniem .txt z folderu "C:\test", bez podfolderów
+N-Znajduje i wypisuje wszystkie pliki z rozszerzeniem .txt z folderu "C:\test", bez podfolderów
+N-Jest niepoprawne.}
+P-Jakie rozszerzenia mogą mieć skrypty PowerShell?
+N-.wps
+N-.shl
+N-.cmd
+T-.ps1}
+P-Której z niżej wymienionych polityk uruchamiania skryptów są dostępne w powerShell systemu Windows?
+N-NoneAllowed - nie pozwala na uruchamianie żadnych skryptów.
+T-AllSigned - możliwość uruchomienia tylko podpisanych skryptów.
+T-RemoteSigned - możliwość uruchamiania skryptów lokalnych oraz podpisanych pochodzących z Internetu.
+T-Unrestricted - pozwala na uruchamianie wszystkich skryptów.}
+P-Czym charakteryzują się komendy (tzw. cmdlety) w PowerShell?
+T-Zazwyczaj zwracają obiekty.
+N-Nie mogą mieć zdefiniowanych kilku aliasów jednocześnie.
+N-Mają nazwy postaci "rzeczownik-czasownik"
+T-Mają nazwy postaci "czasownik-rzeczownik"}
+P-Aby uzyskać pomoc na temat poleceń w Windows PowerShell należy użyć polecenia:
+N-please
+T-help
+N-Oh genie
+T-Get-Help}
+P-Aby sprawdzić czy jakiś katalog już istnieje w Windows PowerShell można skorzystac z poleceń:
+N-remove-item
+T-test-path
+N-path
+N-new-item}
+P-Wskaż wszystkie prawdziwe zdania dotyczące interpretera Windows PowerShell:
+T-Polecenie ls jest aliasem polecenia Get-Children.
+N-PowerShell nie posiada modułów i przystawek pozwalających na rozszerzanie powłoki poprzez dodawanie nowych cmdletów.
+N-W systemie operacyjnym Windows XP SP2 domyślnie zainstalowaną wersją PowerShella jest wersja "PowerShell v2"
+T-PowerShell pozwala na przetwarzanie potokowe, które pozwala na przekazywanie obiektu z jednego cmdletu do drugiego, bez potrzeby korzystania z parsowania tekstu czy zmiany formatowania.}
+P-Polecenie:
+ "new-item c:\temp\test -type directory"
+ spowoduje:
+N-Utworzenie katalogu directory w katalogu c:\temp\test
+N-Sprawdzi istnienie katalogu test w katalogu c:\temp
+T-Utworzenie katalogu test w katalogu c:\temp
+N-Sprawdzi czy "test" w katalogu c:\temp jest katalogiem}
+P-Które wersje systemu Windows NIE wspierają PowerShella?
+N-Windows Vista
+T-Windows 2000
+N-Windows XP SP2
+N-Windows 7}
+P-Które wersje systemu Windows NIE wspierają PowerShella?
+T-Windows 2000
+T-Windows 2000 SP4}
+N-Windows Server 2008
+N-Windows 7
+P-Wskaż wszystkie prawdziwe zdania dotyczące interpretera Windows PowerShell:
+T-Wszystkie zmienne są obiektami .NET.
+T-Aby skopiować plik należy wpisać polecenie "Copy-item lokalizacja1 lokalizacja2"
+N-Aby skopiować plik należy wpisać polecenie "Set-Location lokalizacja1 lokalizacja2"
+T-PowerShell jest elementem pakietu Windows Management Framework.}
+P-W Windows PowerShell poprawnie stworzona pętla to:
+T- $a = 1 do { $a; $a++ } while ($a -lt 10)
+N- $a = 10 do { $a; $a$ -- $ } while ($a -lt 3)
+T- for ($a = 1; $a -le 10; $a++) { $a }
+N- foreach ( $i in get-child c:\scripts ) {$i.extended} }
+P-Co należy wstawić w miejsce znaków zapytania, aby poniższy skrypt PowerShella wyświetlał nazwę procesu w danej chwili najbardziej obciążającego procesor?
+ $ps = get-process
+ $max = $ps[0]
+ foreach ($p in $ps )
+ {
+ if ( ??? )
+ { $max = $p }
+ }
+ $max.processname
+N- $p > $max
+T- $p.cpu -gt $max.cpu
+N-Brak odpowiedzi w źródle.
+N-Brak odpowiedzi w źródle.}
+P-Aby wyświetlić wszystkie pliki o rozszerzeniu .txt znajdujące się w obecnym katalogu można użyć polecenia:
+T-Get-ChildItem *.* -include *.txt
+N-Get-ChildItem -extension *.txt
+N-Get-ChildItem -exclude *.txt
+T-Get-ChildItem | Where-Object {$_.Attributes -ne "Directory" -and $_.Extension -eq ".txt"}}
+P-Zaznacz prawidłowe komendy ustawiające aktualną lokalizację na „C:\”:
+T-Set-Location c:\
+T-chdir c:\
+T-cd c\
+N-goto c:\}
+P-Zaznacz wszystkie prawidłowe odpowiedzi opisujące Windows PowerShell (WPS):
+N-WPS to narzędzie open source do zarządzania systemami Windows spod konsoli linuxowej
+T-WPS zapewnia dostęp do obiektów COM
+T-WPS to środowisko oparte na platformie .NET
+T-WPS to środowisko do automatyzowania zadań administracyjnych przy użyciu skryptów}
+P-Polecenie dir -exclude *.zip -name -recurse -force
+T-Wyświetli nazwy wszystkich plików znajdujących się w danym katalogu, wraz z plikami ze wszystkich podfolderów i ich podfolderów, wraz z plikami ukrytymi i bez dostępu do nich, bez plików z rozszerzeniem zip
+N-Wyświetli nazwy wszystkich plików, z pominięciem plików z rozszerzeniem zip, znajdujących się tylko w danym katalogu, wraz z plikami ukrytymi i bez dostępu do nich.
+N-Wyświetli nazwy wszystkich plików znajdujących się tylko w danym katalogu, wraz z plikami ukrytymi i bez dostępu do nich.
+N-Wyświetli nazwy wszystkich plików z rozszerzeniem zip znajdujących się w danym katalogu, wraz ze wszystkimi podfolderami, wraz z plikami ukrytymi i bez dostępu do nich.}
+P-Wskaż polecenia działające w powłoce bash oraz powershell
+T-man
+T-cp
+T-cd
+N-gps}
+P-Zmienne w interpreterze PowerShell:
+T-nie muszą być deklarowane
+N-wymagają określenia typu
+T-mogą mieć różne typy
+T-są obiektami .NET}
+P-Polecenie PoweShell: „PS> get-process a* | stop-process”
+N-Dotyczy wszystkich procesów (a* = all)
+N-Jest poleceniem błędnym – nie wykona się
+T-Zatrzyma procesy, których lista jest pobierana za pomocą polecenia get-process a*
+T-Dotyczy tylko procesów, których nazwa zaczyna się na literę „a”}
+P-W interpreterze PowerShell polecenie Get-Process:
+T-Pozwala wypisać wszystkie aktualnie uruchomione procesy
+N-Pozwala zmieniać priorytet procesu
+N-Pozwala zmieniać właściciela procesu na aktualnie zalogowanego użytkownika
+N-Przekierowywuje wynik działania procesu (standardowe wyjście) do pliku}
+P-Interpreter Windows PowerShell:
+N-w systemie Windows 7 (lub Windows Server 2008) wymaga wcześniejszej instalacji
+T-Jest zintegrowany z .NET Framework
+T-Dostarcza środowisko do wykonywania zadań administracyjnych wykonywanych poleceniami cmdlets
+T-Wynikiem polecenia w interpreterze jest ciąg obiektów określonego typu}
+P-Zanzacz wszystkie prawidłowe sformułowania dotyczące powłoki PowerShell:
+T-Dzięki operatorowi | (tzw. pipe) można przekierować wyjście jednego polecenia na wejście drugiego, np. get-process | stop-process
+T-Wszystkie zmienne są obiektami .NET
+N-Skrypty pisane dla linuksowego interpretera Bash mogą być uruchamiane w interpreterze PowerShell
+N-Polecenia PowerShell mają ściśle określone nazwy, do których nie można tworzyć aliasów.}
+P-Które z poniższych par słów przedstawiają pewien cmdlet oraz jego alias w Windows PowerShell?
+T-Set-Location, cd
+T-Get-Help, man
+N-Remove-File, rm
+T-Remove-Item, del}
+P-Które polecenia są poprawne i wyświetlają, posortowaną wg. pewnej kolumny, zawartośd bieżącego katalogu?
+T-ls | Sort-Object Name
+N-ls | Sort-Name
+T-ls | Sort-Object Length
+N-ls | Sort(Length)}
+P-Polecenie: "get-childitem C:\* -include *.txt" wydane w Windows PowerShell:
+T-wyświetli nazwy wszystkich plików o rozszerzeniu ".txt" znajdujących się w ścieżce C:\
+N-wyświetli nazwy wszystkich plików o rozszerzeniu ".txt" znajdujących się w ścieżce C:\i jej podkatalogach
+N-wyświetli tylko nazwy wszystkich plików o rozszerzeniu ".txt" znajdujących się w ścieżce C:\
+T-wyświetli m.in. nazwę i czas ostatniego czas ostatniego zapisu wszystkich plików o rozszerzeniu ".txt" znajdujących się w ścieżce C:\}
+P-Która z wersji systemu Windows obsługuje interpreter Windows PowerShell?
+N-Windows 98
+T-Windows XP
+T-Windows Vista
+T-Windows 7}
+P-Zdania prawdziwe, opisujące zmienne PowerShell, to:
+N-Zmienne muszą mieć zdefiniowany typ
+T-Wszystkie zmienne są obiektami .NET
+T-Nie muszą być deklarowane
+N-Wszystkie zmienne są globalne}
+P-Które z podanych przykładów pętli są poprawne w PowerShell?
+T-foreach ($i in get-childitem c:\scripts) {$i.extension}
+T-for($zm = 1; $zm -le 10; $zm++) {$zm}
+N-for(a = 1; i < 10; ++i) {i}
+N-while($i -lt 10) {$i}}
+P-Które z przytoczonych niżej cech odnoszą się do powłoki PowerShell?
+N-Korzystanie z pętli for, while i until jest niedozwolone.
+T-Odwoływanie się do zmiennych jest możliwa poprzez użycie znaku $
+N-Zmienne nie mogą mieć zakresów widoczności
+T-Wszystkie zmienne są obiektami .NET}
+P-Które polecenie powłoki PowerShell wyświetli listę uruchomionych usług?
+T-Get-Service | Where-Object {$_.name -eq "running"}
+N-Get-Service | Where-Object {$_.name -eq "SysMain"}
+N-Get-Service | Where-Object {$_.name -eq "stopped"}
+N-Get-Process | Where-Object {$_.name -eq "running"}}
+P-Aliasami polecenia Set-Location w Windows Powershell są:
+T-sl
+T-cd
+T-chdir
+N-setloc}
+P-$a = 5
+ If ($a -eq 5)
+ {”Piątka ”}
+ elseif ($a -lt 6)
+ {”mniejsza od szóstki”}
+ If ($a -gt 3)
+ {”większa od trójki”}
+ Po wykonaniu tego kodu w oknie Windows Powershell:
+N-Zostanie wypisany tekst „Piątka mniejsza od szóstki”
+N-Zostanie wypisany tekst „Piątka mniejsza od szóstki większa od trójki”
+T-Zostanie wypisany tekst „Piątka większa od trójki”
+N-Zostanie wypisany komunikat o błędzie w kodzie programu}
+P-Które z wymienionych opisów dotyczy PowerShella:
+T-ułatwia zadania administracyjne
+N-jest zgodny linuksową powłoką shell
+N-może być wykorzystywany tylko przez administratorów
+T-może być wykorzystywany przez wszystkich użytkowników}
+P-Wskaż prawdziwe zdania. Zdania dotyczą polityki uruchamiania skryptów w konsoli PowerShell.
+T-Polityka Unrestricted umożliwia uruchamianie niepodpisanych skryptów.
+N-Polityka Restricted umożliwia uruchomienie tylko tych skryptów, które pochodzą z lokalnego komputera.
+N-Polityka AllSigned jest polityką domyślną.
+T-Polityka AllSigned umożliwia uruchamianie skryptów które zostały podpisane przez zaufanego wydawcę lub pochodzą z komputera lokalnego.}
+P-Wskaż prawdziwe zdania. Zdania dotyczą uruchamiania skryptów w konsoli PowerShell.
+T-W konsoli PowerShell nie jest możliwe uruchomienie skryptu bez podania jego pełnej ścieżki.
+N-W konsoli PowerShell jest możliwe uruchomienie skryptu bez podania jego pełnej ścieżki, jednak wymaga to ustawienia odpowiedniej polityki uruchamiania skryptów.
+N-W konsoli PowerShell jest możliwe uruchomienie jakiegokolwiek skryptu bez podania jego pełnej ścieżki pod warunkiem, że bieżącą ścieżką będzie folder zawierający skrypt oraz polityka uruchamiania skryptów jest ustawiona na Unrestricted.
+N-W konsoli PowerShell jest możliwe uruchomienie skryptu bez podawania jego pełnej ścieżki w przypadku gdy skrypt ten pochodzi z komputera lokalnego.}
+P-Windows PowerShell:
+T-Jest zintegrowany z .NET Framework
+N-Dostępny jest dla systemu Windows 2000
+T-Jest interpreterem poleceń
+N-Zwraca w wyniku każdego polecenia zmienną typu string}
+P-Polecenie: "get-childitem C:\Kolokwium\Main\* -include *.kol -recurse | remove-item" w Windows PowerShell:
+T-Znajduje i usuwa wszystkie pliki z rozszerzeniem "kol" z folderu "C:\Kolokwium\Main" i jego podfolderów
+N-Znajduje i usuwa wszystkie pliki z rozszerzeniem "kol" z folderu nadrzędnego do "C:\Kolokwium\Main", tzn. "C:\Kolokwium"
+N-Znajduje i usuwa wszystkie pliki z rozszerzeniem "kol" wyłącznie z folderu "C:\Kolokwium\Main"
+N-Żadna z odpowiedzi nie jest prawidłowa}
+P-Wskaż poprawne zdania dotyczące zmiennych w Windows PowerShell:
+T-Wszystkie zmienne są obiektami .NET.
+N-Zmienne muszą mieć nadany typ.
+N-Wartość do zmiennej przypisuje operator „:=”
+T-Zmienne mogą mieć zakres widoczności.}
+P-Zamiennikiem poleceo dir i ls w PowerShell jest polecenie:
+T-Get-ChildItem
+N-Get-Content
+N-Tee-Object
+N-Set-Variable}
+P-Co charakteryzuje PowerShell:
+T-Nie rozróżnia wielkości liter w komendach
+N-Każdą linię w pliku .ps należy zakończyć średnikiem
+T-Zmienne oznacza się znakiem dolara '$'
+T-Istnieje różnica między pojedynczym a podwójnym cudzysłowem}
+P-Które zdania o PowerShel są FAŁSZYWE:
+N-jest zintegrowany z .NET Framework
+T-GetChildItem zwraca wszystkie obiekty jakie zawierają dzieci bieżącej lokalizacji
+N-Zmienne są obiektami
+T-Do zmiennych odwołujemy się znakiem \%}
+P-Instrukcja w PowerShel która zatrzymuje (ang.kill) procesy zaczynające się na literę Y to:
+T-get-process Y* | stop-process
+N-get-process Y* | kill-proces
+T-ps Y* | stop-process
+T-ps Y* | kill-process}
+P-Użytkownik korzysta z Powershella w środowisku Windows i znajduje się w lokalizacji C:\MyScripts> po wywołaniu komendy ls, okazało się, że w tym folderze znajduje się plik script.ps1. Użytkownik zamierzając go uruchomić, zmienił aktualna politykę wykonywania skryptów z Restricted na RemoteSigned. Które z poniższych komend uruchomią w/w skrypt?
+N-run script.ps1
+N-script.ps1
+T-C:\MyScripts\script.ps1
+T-.\script.ps1}
+P-Co się stanie po wywołaniu komendy: get-process pow* | stop-process
+T-Zostaną zatrzymane wszystkie procesy, których nazwa zaczyna się od ciągu znaków "pow"
+T-Powershell zostanie wyłączony
+N-Zostaną zatrzymane wszystkie procesy, których nazwa zawiera ciąg znaków "pow"
+N-Nic się nie stanie}
+P-Wskaż poprawne polecenia PowerShell usuwające z bieżącego katalogu pliki większe niż 2kB:
+T-Get-Childitem | Where-Object { $_.length -gt 2kB } | Remove-Item
+N-Get-Childitem | Where-Object ( $_.length > 2kB ) | Remove-Item
+N-Get-Childitem | Remove-Item | Where ($length > 2kB)
+T-ls | where-object { $_.length -gt 2kB } | rm}
+P-Po wykonaniu w konsoli PowerShell polecenia Get-ExecutionPolicy otrzymano rezultat "Restricted". Oznacza to, że użytkownik:
+T-Nie może uruchamiać żadnych skryptów, a jedynie osobne komendy
+N-Może uruchamiać niepodpisane skrypty pochodzące z lokalnego komputera
+N-Może uruchamiać podpisane skrypty pobrane z Internetu
+N-Może uruchamiać niepodpisane skrypty pobrane z Internetu}
+P-W PowerShell polecenie Get-Process:
+T-Wylistuje wszystkie aktualnie uruchomione procesy
+N-Zmieni priorytet procesu
+N-Zmieni właściciela procesu na aktualnie zalogowanego użytkownika
+N-Przekierowuje wynik działania procesu (standardowe wyjście) do pliku}
+P-W PowerShell polityka bezpieczeostwa RemoteSigned zezwala na:
+N-Wykonywanie dowolnych skryptów.
+T-Uruchamianie skryptów podpisanych przez zaufanego wydawcę.
+T-Uruchamianie niepodpisanych skryptów, które powstały na lokalnym komputerze.
+N-Korzystanie jedynie z pojedynczych komend, bez możliwości uruchamiania skryptów.}
+P-Prawidłowa postać pętli for w PowerShell to:
+N-for (i = 1, i -le 10, i++) { }
+N-for (i = 1; i -le 10; i++) { }
+N-for ($i = 1; $i <= 10; i++) { }
+T-for ($i = 1; $i -le 10; $i++) { }}
+P-Jaki jest rezultat polecenia interpretera PowerShell:
+ get-childitem C:\Work\-recurse | get-acl | where { $_.Owner -match "Maniek"}
+T-Wypisze wszystkie pliki, których właścicielem jest Maniek z folderu C:\Work oraz podfolderów
+N-Wypisze tylko pliki z folderu C:\Work, których właścicielem jest Maniek.
+N-Wypisze wszystkie pliki z dysku C:, których właścicielem jest Maniek.
+N-Wypisze pliki, które nie należą do użytkownika Maniek, z folderu C:\Work}
+P-PS E:\test> ls
+ Directory: E:\test
+ Mode   LastWriteTime Length Name
+ $ ----\;\;\;\;\;\;-------------\;\;\;------\;\;\;---- $
+ $ -a--- $  2012-06-02    16:12  0 a.xyz
+ $ -a--- $  2012-06-02    16:12  0 b.xyz
+ $ -a--- $  2012-06-02    16:12  0 c.xyz
+ $ -a--- $  2012-06-02    16:12  0 d.xyy
+ $ -a--- $  2012-06-02    16:12  0 e.xxy
+ PS E:\test> get-childitem C:\test\* -include *.xyz -recurse | remove-item
+ Zaznacz możliwe do otrzymania wyniki działania komendy ls z dowolnymi parametrami po wykonaniu powyższej komendy:
+T-Directory: E:\test
+ Mode  LastWriteTime Length Name
+ ----  ------------- ------ ----
+ -a--- 2012-06-02    16:12  0 d.xyy
+ -a--- 2012-06-02    16:12  0 e.xyy
+T-Directory: E:\test
+ Mode  LastWriteTime Length Name
+ ----  ------------- ------ ----
+ -a--- 2012-06-02    16:12  0 e.xxy
+T-d.xyy
+ e.xxy
+ PS E:\test>
+T-Directory: E:\test
+P-Co otrzymamy po wykonaniu następującej komendy w interpreterze PowerShell:
+ PS C:\> Get-ChildItem | where { !$_.PslsContainer  } | Select-Object Name
+N-Tylko nazwy folderów jakie znajdują się w lokalizacji C:\
+N-Tylko nazwy folderów i podfolderów jakie znajdują się w lokalizacji C:\
+T-Tylko nazwy plików jakie znajdują się w lokalizacji C:\
+N-Dokładny opis folderów, czyli m.in. nazwy i uprawnienia jakie znajdują się w lokalizacji C:\}
+P-Które z poniższych skryptów PowerShella wydrukują listę nazw wszystkich plików o rozszerzeniu .txt w aktualnie wybranym katalogu?
+T-get-childitem | where-object {$_.extension -eq ".txt"} | format-table Name
+N-get-childitem | format-table Name | where-object {$_.extension -eq ".txt"}
+T-foreach($a in get-childitem) {
+ if($a.extension -eq ".txt") {
+ $a.Name
+ }
+ }
+T-get-childitem | foreach {if($_.extension -eq ".txt"){$_.Name}}}
+P-Liczby od 1 do 5 wypisze następujący skrypt:
+T-$i = 1
+ do {
+ Write-Host $i
+ $i++
+ }
+ while ($i -le 5)
+T-$i = 1
+ do {
+ echo $i
+ $i++
+ }
+ while ($i -le 5)
+N-$i = 1
+ do {
+ echo i
+ i++
+ }
+ while ($i -le 5)
+N-$i = 1
+ do {
+ print $i
+ i++
+ }
+ while ($i -le 5)}

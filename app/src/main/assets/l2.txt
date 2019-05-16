@@ -1,0 +1,160 @@
+﻿P-Efekt polecenia ls -l file.txt jest następujący: 
+ -rw-r----- 1 me students 0 2010-02-20 23:10 file.txt  
+ W następnym kroku powyższemu plikowi nadano pewne uprawnienia ACL, a następnie wykonano polecenie getfacl file.txt uzyskując następujący wynik:  
+ #file: file.txt 
+ #owner: me 
+ #group: students 
+ user::rw- 
+ user:friend:r-- 
+ group::r-- 
+ group: class:rw- 
+ mask::rw- 
+ other::--- 
+  Zaznacz poprawne polecenia, które mogłyby zostać wykonane w celu uzyskania powyższych uprawnieć ACL:
+T-setfacl -m u:friend:4, g:class:6 file.txt
+T-setfacl -m u:friend:r, g:class:rw file.txt
+N-setfacl -m u:r:friend, g:rw:class file.txt
+N-setfacl -x u:friend:4, g:class6 file.txt
+P-Efekt polecenia ls -l test jest następujący: 
+ drw-r----- 1 so1 students 0 2011-06-10 23:10 test  
+ W następnym kroku powyższemu plikowi nadano pewne uprawnienia ACL, a następnie wykonano polecenie getfacl test uzyskując następujący wynik:  
+ #file: test 
+ #owner: so1 
+ #group: students 
+ user::rwx 
+ group::r-x 
+ other::r-x 
+ default:user::rwx 
+ default:group::r-x 
+ default:grup:teachers:rwx 
+ default:mask::rwx 
+ default:other::r-x 
+  Zaznacz poprawne polecenia, które mogłyby zostać wykonane w celu uzyskania powyższych uprawnieć ACL:
+T-setfacl -d -m g:teacher:rwx test
+N-brak poprawnej odpowiedzi
+N-setacl -m g:teacher:rwx test
+N-nie istnieje żadne polecenie, które pozwalałoby uzyskać podany wynik
+P-Którym poleceniem można zmienić ustawienia pliku file, tak aby użytkownik user1 miał pełne uprawnienia, a grupa group1 mogła czytać i modyfikować, ale nie mogła go wykonać jako skryptu?
+T-setfacl -m u:user1:7, g:group1:6 file
+N-setfacl -m u:user1:r-x, g:group1:rw- file
+N-setfacl -m u:user1:6, g:group1:7 file
+T-setfacl -m u:user1:rwx, g:group1:rw- file
+P-Polecenie getfacl:
+T-zwraca informacje na temat aktualnych uprawnień zdefiniowanych na liście ACL
+N-usuwa uprawnienia zdefiniowane na liście ACL
+T-zwraca informację na temat właściciela pliku
+T-Pozwala wyświetlić informacje na temat uprawnień zdefiniowanych w ACL dla kilku plików na raz
+P-Zaznacz odpowiadające sobie mapowanie typów ACL na standardowe Linuxowe klasy użytkowników:
+N-named user - owner
+T-owner - owner
+T-mask - group
+N-owning group - group
+P-Polecenie, w wyniku którego każdy nowoutworzony PLIK będzie miał uprawnienia -rwxr-x--- to:
+N-umask 027
+N-umask 750
+N-umask 750
+T-brak poprawnej odpowiedzi
+P-Polecenie setfacl -m u:user1:6, g:group1:7 file.txt:
+N-Ustawi prawa do pliku "file.txt" wszystkich użytkowników jako rwx.
+N-Umożliwi użytkownikowi o nazwie "user1" wykonanie pliku "file.txt".
+T-Ustawi prawa do pliku "file.txt" użytkownika o nazwie "user1" jako rw-, a grupy o nazwie "group1" jako rwx.
+N-Ustawi prawa do pliku "file.txt" użytkownika o nazwie "user1" jako r--m a grupy o nazwie "group1" jako ---.
+P-W systemie Linux Debian użytkownik wykonał sekwencję poleceń: 
+ umask 075; touch test; ls -l |grep test; 
+ Zaznacz poprawny wynik dla podanej sekwencji poleceń:
+N----rwxr-x 1 labso labso 0 2010-06-11 16:30 test
+T--rw----w- labso labso 0 2010-06-11 16:30 test
+N--rwx----wx 1 labso labso 0 2010-06-11 16:30 test
+N--rw-rw-r-- 1 labso labso 0 2010-06-11 16:30 test
+P-Wskaż poprawną odpowiedź dotyczącą instalacji ACL na komputerze z systemem ubuntu/debian:
+N-ACL nie znajduje się oficjalnie w repozytorium. Należy pobrać źródła z internetu oraz samodzielnie przeprowadzić kompilację oraz konfigurację.
+N-Nie jest wymagana instalacja ACL. Systemy te zawierają preinstalowane paczki związane z ACL.
+N-Należy zainstalować acl komendą sudo apt-get install acl. Instalator automatycznie skonfiguruje system do pracy z ACL.
+T-Należy zainstalować acl komendą sudo apt-get install acl, a następnie manualnie przeprowadzić konfigurację systemów plików w pliku /etc/fstav podłączając ACL.
+P-Uprawnienia dla nowo tworzonych plików przy masce 066 wyglądają następująco:
+N--rwxrwxrwx
+N--rw-rw-r--
+N----rw-rw-
+T--rw------
+P-W stosunku do chmod, lista ACL rozszerzyła możliwości przyznawania praw o:
+T-Określenie praw do pliku dla dowolnej grupy.
+T-Określenie praw do pliku dla dowolnego użytkownika.
+N-Określenie praw do pliku dla innych - other.
+N-Określenie praw do pliku dla właściciela - owner.
+P-W systemie Linux z działającym systemem ACL wydano polecenie getfacl mySong.bin. Otrzymano następujący wynik: 
+ #file: mySong.bin 
+ #owner: jan 
+ #group: homegroup 
+ user::rw- 
+ user:maria:r-- 
+ group::r-- 
+ group:dzieci:rw- 
+ mask::rwx 
+ other::---
+  W tym przypadku: 
+T-użytkownik z grupy dzieci może odczytywać plik mySong.bin
+T-użytkownik maria może odczytywać plik mySong.bin
+N-użytkownik maria może modyfikować plik mySong.bin
+T-uzytkowik z grupy dzieci może modyfikować plik mySong.bin
+P-Zaznacz poprawne odpowiedzi dotyczące maski oraz wyznaczania uprawnień dla wpisów ACL powiązanych z klasą grupy:
+T-Maska definiuje maksymalne efektywne uprawnienia dla wszystkich wpisów ACL powiązanych z klasą grupy
+N-Uprawnienia efektywne powstają przez zsumowanie uprawnień maski z uprawnieniami odpowiedniej klasy ACL
+N-Maska definiuje minimalne efektywne uprawnienia dla wszystkich wpisów ACL powiązanych z klasą grupy
+T-Uprawnienia efektywne powstają przez przecięcie uprawnień maski z uprawnieniami odpowiedniej klasy ACL
+P-Wskaż poprawne stwierdzenia dotyczące Linux ACL
+T-Uprawnienie typu named-group można zamaskować
+T-Maska w Linux ACL określa maksymalne uprawnienia
+N-Uprawnienie wpisu ACL other można zamaskować
+T-Uprawnienie typu named-user można zamaskować
+P-Aby korzystać w systemie Linux z Acces Control List (ACL) należy:
+N-ACL jest domyślnie włączony zaraz po instalacji dystrybucji systemu Linux.
+T-Dodać obsługę ACL do wszytskich systemów plików w pliku /etc/fstab.
+N-Żadna odpowiedź nie jest poprawna.
+T-Zainstalować pakiet acl.
+P-Efekt polecenia ls -l test.txt jest następujący: 
+ -rw-r----- 1 so1 students 0 2011-06-10 23:10 test  
+ W następnym kroku powyższemu plikowi nadano pewne uprawnienia ACL, a następnie wykonano polecenie getfacl test.txt uzyskując następujący wynik:  
+ #file: test 
+ #owner: so1 
+ #group: students 
+ user::rwx 
+ group::r-x 
+ other::r-x 
+ default:user::rwx 
+ default:group::r-x 
+ default:group:teachers:rwx 
+ default:mask::rwx 
+ default:other::r-x 
+ default:other::---
+  Zaznacz poprawne polecenia, które mogłyby zostać wykonane w celu uzyskania powyższych uprawnieć ACL:
+N-brak poprawnej odpowiedzi
+N-setfacl -d -m g:teachers:rwx test
+N-setfacl -m g:teachers:rwx test
+T-Nie istnieje żadne polecenie, które pozwalałoby uzyskać podany wynik
+P-W jaki sposób można sprawdzić, czy dany plik ma zdefiniowane dodatkowe uprawnienia ACL?
+T-Poprzez użycie polecenia getfacl
+N-Poprzez użycie polecenia filefrag
+N-Korzystając z polecenia ps z argumentem -aux
+T-Używając polecenia ls
+P-Polecenie, wyniku którego każdy nowoutworzony KATALOG w systemie Debian będzie miał uprawnienia 644 to:
+N-umask 644
+N-brak poprawnej odpowiedzi
+T-umask 133
+N-umask 022
+P-Efekt polecenia ls -l file.txt jest następujący: 
+ -rw-r----- 1 so1 students 0 2010-02-20 23:10 test.txt  
+ W następnym kroku powyższemu plikowi nadano pewne uprawnienia ACL, a następnie wykonano polecenie getfacl test.txt uzyskując następujący wynik:  
+ #file: test.txt 
+ #owner: so1 
+ #group: students 
+ user::rw- 
+ user:so2:rw- 
+ group::r-- 
+ group: teachers:rwx 
+ mask::rwx 
+ other::--- 
+  Zaznacz poprawne polecenia, które mogłyby zostać wykonane w celu uzyskania powyższych uprawnieć ACL:
+T-setfacl -m u:so2:rw, g:teachers:rwx test.txt
+T-setfacl -m u:so2:6, g:teachers:7 test.txt
+N-setfacl -x u:so2:rw, g:teachers:rwx test.txt
+N-setfacl -m user:rw:so2, group:rwx:teachers test.txt

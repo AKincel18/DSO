@@ -1,0 +1,168 @@
+﻿P-Wskaż wszystkie poprawne stwierdzenia odnoszące się do X Window System
+T-Został on zaprojektowany w architekturze klient-serwer
+T-Jest to zbiór funkcji i protokołów wyświetlających informacje graficzne na ekranie
+N-Odpowiada za wygląd okien wyświetlanych w systemie
+T-Pozwala na zdalną pracę na odległym komputerze, wykorzystując komputer lokalny jako serwer X
+P-Które z podanych komponentów NIE wchodzi w skład X Window System
+T-Serwer Apache
+N-Menadżer okien
+T-Baza danych
+N-X serwer
+P-Czym różnią się xdm/gdm/lightdm i startx?
+T-Gdy X zostanie opuszczony za pomocą polecenia zakończenia menadżera okna Xdm ponownie pokazuje ekran logowania
+T-Xdm/Gdm/lightdm uruchamia ekran logowania
+N-Startx uruchamia ekran logowania
+N-Gdy X zostanie opuszczony za pomocą polecenia zakończenia menadżera okna startx ponownie pokazuje ekran logowania
+P-Polecenie Xorg -configure
+N-Jest narzędziem graficznym
+T-Pracuje w trybie tekstowym
+T-Służy do konfiguracji X-serwera
+T-Modyfikuje/Generuje domyślny plik Xorg.conf
+P-Wpis do /etc/X11/xorg.conf:  Section "Device" 
+ Identifier "Videocard0" 
+ Driver "nvidia" 
+ Endsection
+T-wykorzysta sterownik nvidia do obsługi pierwszej karty graficznej
+N-jest niepoprawnym wpisem
+N-utworzy nową wirtualną kartę graficzną
+N-nic nie zmieni, bo plik konfiguracyjny Xorg znajduje się w innej lokalizacji
+P-Manager okien w systemie Linux
+N-Jest X-Serwerem
+N-zarządza pamięcią X-serwera
+T-Jest odpowiedzialny za wygląd i funkcjonalność pulpitu
+T-Jest odpowiedzialny za wygląd okien
+P-Wartości domyślne używane przez standardowe aplikacje Systemu X mogą zostać zmienione. Służą do tego pliki w katalogu:
+N-~app-defaults/˜
+T-/etc/X11/app-defaults/
+N-~defaults-app-values/
+N-/etc/X11/default-app-values
+P-Dostępne są 2 komputery, serwer - saturn, oraz klient - jupiter. Po wykonaniu komend na komputerze saturn: 
+ $ xhost +jupiter 
+ na komputerze jupiter: 
+ $ export DISPLAY=saturn:0 
+ $ xeyes 
+ Efektem będzie:
+N-Wynik programu "xeyes" widziany będzie na obu komputerach
+T-Wynik programu "xeyes" widziany będzie tylko na komputerze saturn
+T-Program "xeyes" wykonany zostanie na komputerze jupiter
+N-Program "xeyes" wykonany zostanie na komputerze saturn
+P-Menadżerem okien jest:
+N-gdm
+N-lightdm
+T-KDE
+T-Gnome
+P-X11 (X Window System) to:
+T-Graficzny system komputerowy
+N-Manager okien
+N-Aplikacja pozwalająca na zalogowanie się do systemu
+N-żadna z powyższych
+P-System X
+T-jest zaprojektowany w architekturze klient-serwer
+N-odpowiada za obsługę okien
+T-odpowiada za obsługę urządzeń wejścia
+N-odpowiada za zamykanie/otwieranie programów
+P-X Window Server
+T-...zajmuje się obsługą urządzeń wejściowych (myszki, klawiatury, tabletu).
+N-...dostarcza rozbudowany interfejs użytkownika.
+N-...zajmuje się obsługą okien, dostarcza wbudowane mechanizmy do ich przesuwania, zmiany rozmiaru, zamykania i uruchamiania programów itd.
+T-...udostępnia interfejs graficzny i pozwala rysować nieskomplikowane elementy na ekranie.
+P-Zaznacz implementacje X Window System
+T-XFree86
+N-Gnome
+N-KDE
+T-X.Org
+P-Dodatkowe skrypty startowe Systemu X Window mogą być zdefiniowane w
+T-~.xinitrc
+T-/etc/X11/xinit/xinitrc
+N-/etc/xorgrc
+N-~.xorgrc
+P-Podaj polececenie potrzebne o uruchomienia Xwindow
+T-startx
+N-/etc/init.d/gdm start
+N-/etc/X11/xorg start
+N-setx start
+P-Domyślne skróty klawiszowe dla serwera X, to:
+T-Alt+[Ctrl]+[FX], gdzie X={1,2...7 - przełączanie się między konsolami tekstowymi. Zazwyczaj [Alt] + [F7] pozwala na przełączenie z trybu tekstowego  w tryb graficzny.
+N-Alt + [Ctrl] + [F12] - otwiera tekstowy menadżer konfiguracji serwera X.
+N-Alt + [Esc] - restart serwera X
+T-Ctrl + [Alt] + [Backspace] - wyłączenie serwera X.
+P-W jaki sposób można uruchomić powłokę graficzną w systemie Linux?
+T-Skorzystać z menadżera wyświetlania, np. xdm
+T-Uruchomić aplikację startową dostarczaną wraz ze środowiskiem graficznym, np startxfce4
+T-Może być skonfigurowany do uruchomienia na odpowiednim poziomie uruchomieniowym
+T-Skorzystać ze skryptu startowego startx/xinit
+P-Plik /etc/X11/Xorg.conf pozwala na zmianę:
+T-Ustawień myszy i klawiatury.
+T-Modelu używanej karty graficznej i jej parametrów.
+T-Rozdzielczości ekranu oraz częstotliwości odświeżania.
+T-Zakres odświeżania pionowego dla używanego monitora.
+P-Uruchomienie w konsoli któregoś z menadżerów ekranu (ang. Display Manager, np gdm, xdm, lightdm) przez użytkownika root, przy założeniu, że X nie jest uruchomiony, spowoduje:
+N-nie można uruchomić menadżera ekranu z konsoli
+N-uruchomienie sesji X użytkownika, który uruchamiał polecenie
+N-zakończenie sesji użytkownika root, w której wykonał polecenie
+T-wyświetlenie ekranu logowania
+P-W skład X-Window wchodzi:
+T-Menadżer Okien
+N-X-Writer
+T-X-Serwer
+T-X-klient
+P-Zaznacz zdania prawidzwe na temat podsystemu graficznego X Windows:
+N-Jego implementacją jest np. Gnome lub KDE.
+T-Jego implementacją jest X.org oraz XFree86
+N-Po jego uruchomieniu oraz systemu Linux istnieje możliwość przejścia z trybu graficznego do konsoli tekstowej za pomocą skrótu ALT+CTRL+1
+T-Po jego uruchomieniu oraz systemu Linux istnieje możliwość przejścia z trybu graficznego do konsoli tekstowej za pomocą skrótu ALT+CTRL+F1
+P-Plik /etx/X11/xorg.conf
+N-(Nie wiadomo co jest tu napisane, zdaniem starszych roczników fałsz)
+N-Zawiera ustawienia menadżera okien, takie jak np. ułożenie ikon na pulpicie, kolory, style obramowania okien itp.
+T-Zawiera konfigurację urządzeń wejścia/wyjścia podłączonych do komputera
+N-Jest plikiem wykonywalnym
+P-Wskaż poprawne zdania dotyczące pliku konfiguracyjnego Xorg.conf
+N-W pliku Xorg.conf może znaleźć się tylko jedna sekcja Device
+T-Rozdzielczość monitora definiuje się po słowie Modes
+N-W jednej sekcji Display może zdefiniować maksymalnie jedną rozdzielczość monitora.
+T-W jednej sekcji Display może zdefiniować maksymalnie jedną głębię kolorów monitora.
+P-Zaznacz prawidłowe stwierdzenia:
+T-xinit wywołuje xterm
+N-xterm wywołuje xinit
+T-startx wywołuje xinit
+N-xinit wywołuje xstart
+P-Plik konfiguracyjny X-Serwera (w systemie X.org)
+T-nie jest wymagany (x-serwer wykona wtedy konfigurację dynamiczną)
+N-musi zawierać sekcje Device, Monitor, Screen, Keyboard, Mouse
+N-musi zawierać przynajmniej sekcję Device
+N-musi zawierać skecje Device, Monitor, Screen oraz Display
+P-W pliku /etx/X1/xorg.conf mamy możliwość skonfigurowania:
+T-rozdzielczości, z jaką startuje system graficzny
+T-myszy
+N-drukarek, które są dostępne w systemie
+T-sterownika grafiki, z którego skorzystać ma system
+P-X Window System:
+T-zawiera mechanizmy obsługi klawiatury i myszy
+N-dostarcza graficzny interfejs użytkownika (okna, przyciski itd.)
+N-Jest rozbudowanym serwerem VNC
+T-zawiera protokoły sieciowe umożliwiające wykonywanie programów X w jednym komputerze i wyświetlanie rezultatu ich pracy na drugim
+P-Które z podanych zdań prawidłowo opisują architekturę X Widnow System?
+T-Serwer X jest lokalny i działa na komputerze użytkownika.
+N-Klienci zawsze działają lokalnie, natomiast serwer X może działać na innej maszynie.
+T-Klienci mogą działać na różnych maszynach.
+N-Zarówno serwer X, jak i klienci muszą działać lokalnie, na komputerze użytkownika.
+P-Zaznacz zdania prawdziwe dotyczące systemu Linux
+N-Środowisko graficzne X jest uruchamiane zawsze przy starcie systemu, niezależnie od konfiguracji.
+T-W czasie pracy w sieci z wykorzystaniem Xwindow: X-Serwer jest uruchomiony na lokalnym komputerze, z którego odbywa się sterowanie, natomiast X-Klient na serwerze zdalnym, gdzie odbywa się przetwarzanie danych.
+N-Xwindow pozwala pracować jedynie w trybie z jednym użytkownikiem.
+T-Przejścia między konsolami tekstowymi odbywa się przy pomocy klawiszów [Alt]+[Ctrl]+[F1] do [F6]
+P-Co jest dodatkowym elementem systemu X Window
+T-Serwer czcionek
+T-Zarządca okien (window manager)
+N-Serwer plików tekstowych
+N-Zarządca sieci (network-manager)
+P-Jakie sekcje może zawierać plik Xorg.conf
+N-WindowManager
+T-Device
+T-Screen
+T-Monitor
+P-Jakie programy mogą być klientami Xwindow?
+N-aptitude z interfejsem tekstowym (jakoś tak)
+T-gimp
+T-xterms
+T-firefox

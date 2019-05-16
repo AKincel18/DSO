@@ -1,0 +1,125 @@
+﻿P-Zaznacz wszystkie poprawne odpowiedzi:
+N-Jądro Linuxa jest mikrojądrem (microkernel)
+N-Jądro Linuxa jest jądrem typu hybrydowego (hybrid)
+T-Jądro Linuxa jest jądrem typu monolitycznego (monolythic)
+N-Jądro Linuxa jest napisane w C++
+P-Zaznacz wszystkie poprawne odpowiedzi:
+N-Jądro Linuxa wykorzystuje bibliotekę libc (dzięki temu można wykorzystywać np. funkcję printf()
+T-Jądro Linuxa jest napisane w C
+T-Jądro Linuxa zarządza pamięcią operacyjną (przydziały/zwolnienia).
+N-ZOSTAWIĆ PUSTE
+P-Zaznacz wszystkie poprawne odpowiedzi:
+N-Do sterowania parametrami pracy jądra można wykorzystać pliki znajdujące się w katalogu "/var"
+T-Do sterowania pracą jądra Linuxa można wykorzystać polecenie "sysctl"
+T-Do jądra systemu operacyjnego Linux można, w czasie jego pracy, dołączać różnorodną funkcjonalność (np. sterowniki urządzenia)
+N-Do załadowania modułu w jądrze można wykorzystać polecenia rmmod oraz modprobe -r
+P-Zaznacz wszystkie poprawne odpowiedzi:
+T-Do sterowania parametrami pracy jądra można wykorzystać pliki znajdujące się w katalogu "/proc"
+N-Do sterowania pracą jądra Linuxa można wykorzystać polecenie "sysinfo"
+N-Do usunięcia modułu z jądra można wykorzystać polecenie insmod
+T-Do sprawdzenia jakie moduły załadowane są do jądra można wykorzystać polecenie lsmod
+P-Zaznacz wszystkie poprawne odpowiedzi:
+T-Do załadowania modułu w jądrze można wykorzystać polecenie modprobe oraz insmod
+T-Katalog "/proc" zawiera pliki, pozwalające na zmianę sposobu przydzielania pamięci programom przez jądro Linux%
+N-Katalog "/var" zawiera pliki, pozwalające na zmianę sposobu przydzielania pamięci programom przez jądro systemu Linux
+T-Do usunięcia modułu z jądra można wykorzystać polecenia modprobe oraz mmod
+P-Zaznacz wszystkie poprawne odpowiedzi:
+T-Katalogi /proc, /sys oraz polecenie sysctl pozwalają na kontrolę pracy systemu
+T-Z jądra systemu operacyjnego Linux, w trakcie jego pracy, można usuwać różnorodną funkcjonalność (na przykład sterowniki urządzenia)
+T-Do kontroli pracy systemu można wykorzystać polecenia sysctl oraz zawartość katalogu /proc
+T-Do sprawdzenia jakie moduły załadowane są do jądra można wykorzystać polecenie lsmod
+P-Zaznacz wszystkie poprawne odpowiedzi:
+T-Do załadowania modułu w jądrze można wykorzystać polecenia modprobe oraz insmod
+N-Do kontroli pracy systemu można wykorzystać polecenia sysctl oraz zawartość katalogu /var
+N-ZOSTAWIĆ PUSTE
+N-ZOSTAWIĆ PUSTE
+P-Zaznacz wszystkie funkcje realizowane przez jądro monolityczne (na przykład jądro Linuxa)
+T-Szeregowanie procesów
+T-Zarządzanie pamięcią (zwalnianie/przydzielanie)
+T-Szeregowanie I/O
+T-Obsługa systemu plików
+P-Jakie operacje można wykonać za pomocą polecenia sysctl?
+T-Ustawić wartości dla parametrów jądra
+N-Ustawić wartości dla parametrów systemu plików
+T-Wypisać wszystkie parametry jądra w trakcie działania systemu
+N-Wypisać wszystkie parametry systemu plików
+P-Polecenie sysctl:
+N-Służy do zmiany hasła użytkownika systemu
+N-Umożliwia zmianę nazwy użytkownika
+N-Wyświetla listę użytkowników w systemie
+T-Pozwala na zmianę parametrów jądra systemu w trakcie działania systemu operacyjnego
+P-Polecenie sysctl:
+T-To komenda pozwalająca na konfiguracje parametrów jądra systemu Linux.
+T-Wykonuje konfigurację jaką można także wykonać w wirtualnym systemie plików /proc/sys.
+N-Pozwala na rekompilację jądra z uwzględnieniem nowych plików konfiguracyjnych.
+N-Wyświetla wszystkie procesy w systemie.
+P-Wskaż prawdziwe zdania:
+N-przy overcommit_memory ustawionym na 2 system zawsze przydzieli aplikacjom dokładnie 100% pamięci RAM
+T-przy overcommit_memory ustawionym na 1 możliwe jest uzyskanie za pomocą malloc() ilości pamięci wirtualnej większej niż objętość pamięci fizycznej + swap
+T-przy overcommit_memory ustawionym na 2 ilość pamięci przydzielonej aplikacjom zależy od overcommit_ratio
+N-kernel nigdy nie przydziela więcej pamięci niż jest dostępne fizycznie
+P-Sterowanie jądrem systemu Linux. Zaznacz poprawne odpowiedzi:
+N-Nawet najdrobniejsza zmiana w pracy jądra systemu wymaga jego ponownej kompilacji.
+T-Możliwa jest zmiana niektórych parametrów jądra w "locie" korzystając z komendy sysctl.
+N-Po każdej zmianie parametru w jądrze systemu Linux należy ponownie uruchomić komputer.
+T-Wartości sysctl wczytywane są podczas startu systemu z pliku /etc/sysct.conf.
+P-Sterowniki w systemach Linuxowych: Wskaż poprawne odpowiedzi.
+T-Można wkompilować w jądro, ale można ładować dynamicznie bez potrzeby wkompilowywania.
+T-Mogą być ładowane dynamicznie w trakcie działania systemu.
+N-Są tylko wkompilowane w jądro i uruchamiane automatycznie. Nie ma innej możliwości instalacji i uruchomienia.
+N-Po instalacji nowego sterownika zawsze wymagane jest ponowne uruchomienie komputera.
+P-W jaki sposóbm ożna wyłączyć partycję SWAP?
+N-Nie można wyłączyć partycji SWAP
+N-sudo setswap off
+T-sudo swapoff -a
+N-sudo swap stop
+P-Jakie jest zadanie jądra w systemie Linux?
+T-Ładuje i odładowuje sterowniki urządzeń.
+N-Tylko i wyłącznie zarządza pamięcią.
+T-Pośredniczy pomiędzy aplikacją użytkownika a sprzętem.
+T-Zarządza pamięcią.
+P-Jądro w systemie Linux odpowiedzialne jest za:
+T-Sterowniki urządzeń
+N-Wygląd interfejsu graficznego
+T-Zarządzanie procesami
+T-Obsługę pamięci
+P-Moduły jądra systemu Linux: wskaż wszystkie poprawne odpowiedzi.
+T-Można pisać w języku C
+N-Mogą być załadowane przez każdego użytkownika
+T-Nie posiadają możliwości wyprowadzania danych na standardowe wyjście stdout za pomocą printf
+T-Można je kompilować na tym samym systemie na którym zamierzamy je uruchomić.
+P-Co znajduje się w katalogu /proc/?
+T-Informacje o procesach w systemie
+N-Informacje o użytkownikach
+T-Informacje o sieci
+T-Ogólne informacje o systemie
+P-Program modprobe:
+N-wymaga restartu aby zmiany zostały wprowadzone
+T-umożliwia usuwanie modułów z kernela
+T-umożliwia ładowanie modułów kernela
+T-automatycznie dodaje moduły zależne
+P-Parametry jądra systemu Linux można odczytać za pomocą:
+N-pliku /proc/stat
+T-katalogu /proc/sys
+N-komendy ps
+T-komendy sysctl
+P-Które z poniższych komend sprawdza logi jądra systemu Linux
+T-dmesg
+N-klog
+N-kmllg
+N-kernelog
+P-Jądro systemu operacyjnego Linux:
+T-pośredniczy pomiędzy aplikacjami użytkownika, a sprzętem
+T-pośredniczy pomiędzy aplikacjami użytkownika, a pamięcią
+N-służy wyłącznie do uruchomienia systemu i skonfigurowania urządzeń, potem kończy swoją pracę
+N-NIE pozwala na ładowanie dodatkowych modułów
+P-Które ze zdań dotyczących sysctl jest poprawne?
+T-Katalog /proc/sys dostarcza interfejs do parametrów sysctl
+T-/proc/sys/vm/overcommit_memory jest odpowiednikiem parametru vm.overcommit_memory w sysctl.conf
+N-jeżeli katalog /proc/sys jest tylko do odczytu to da się mimo to zmieniać parametry przez komendę sysctl
+N-Wartości sysctl są wczytywane przy starcie systemu z /proc/sys/vm/sysctl.conf
+P-Zaznacz prawdziwe zdania dotyczące partycji wymiany (SWAP) w systemie Linux:
+T-Domyślnie jest na niej zapisywany zrzut pamięci RAM przy hibernacji
+T-Można go aktywować i dezaktywować podczas działania systemu
+N-Jest zamontowana w katalogu /swap
+N-Jest konieczna do działania systemu Linux

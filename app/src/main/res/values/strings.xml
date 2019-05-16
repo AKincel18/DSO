@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">DSO</string>
+    <string-array name="name">
+        <item> RAID </item>
+        <item> Usługi graficzne Xwindow </item>
+        <item> Linux ACL </item>
+        <item> LAMP </item>
+        <item> Linux Kernel  </item>
+        <item> Wielosystemowość </item>
+
+    </string-array>
+    <string-array name="name2">
+        <item> AD </item>
+        <item> GPO </item>
+        <item> Instalacja zdalna </item>
+        <item> RAID </item>
+        <item> PowerShell  </item>
+        <item> API </item>
+
+    </string-array>
+</resources>

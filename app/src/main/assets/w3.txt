@@ -1,0 +1,90 @@
+﻿P-Windows Deployment Services (WDS):
+N-Pozwala na przygotowanie obrazów dysków do zautomatyzowania lokalnej instalacji systemu Windows.
+T-Pozwala na instalację systemu Window.
+N-Możliwe jest instalowanie przez sieć wyłącznie systemów serwerowych np. Windows Server 2008.
+N-Możliwa jest zdalna instalacja (przez sieć) systemu Linux wykorzystując system Windows Server.
+P-Windows Deployment Services wykorzystuje obrazy z rozszerzeniem:
+N-BIN
+N-MDF
+T-WIM
+N-ISO
+P-Format obrazów instalacyjnych wykorzystywany przez Windows Deployment Services to:
+N-VHD
+N-ISO
+N-IMG
+T-WIM
+P-Windows Deployment Services to:
+N-Tworzenie instalatorów dla programów na platformę .NET
+N-Instalację systemu Windows poprzez nośnik USB.
+T-Usługa pozwalająca na instalację systemu Windows przez sieć.
+N-Instalację i konfigurację aplikacji internetowej na serwerze IS.
+P-Windows Deployment Services (WDS) to technologia serwerowa, która pozwala na:
+N-Zdalne logowanie do systemu.
+T-Sieciową instalację systemu operacyjnego.
+T-Instalację systemu operacyjnego bez płyty instalacyjnej typu CD lub DVD.
+N-Lokalne monitorowanie systemu operacyjnego chroniąc przed złośliwym oprogramowaniem.
+P-Aby możliwa była zdalna istalacja, to maszyna kliencka może uruchamiać się z:
+N-dysku twardego
+T-karty sieciowej
+N-napędu CD / DVD
+N-nie ma to znaczenia
+P-Jakie elementy są wymagane do poprawnej pracy WDS?
+N-Windows Server w wersji 2008 lub wyższej.
+T-Usługa Windows Deployment Services zainstalowana na serwerze udostępniającym obrazy do instalacji.
+N-Sprzęt sieciowy obsługujący protokół WDS (router, switch, karta sieciowa)
+T-Kontroler domeny, serwer DNS, serwer DHCP
+P-Które z poniższych zdań na temat wymagań instalacji zdalnej jest prawdziwe?
+T-Serwer WDS musi być członkiem domeny Active Directory.
+T-W sieci musi znajdować się serwer DNS.
+T-W sieci musi znajdować się serwer DHCP.
+N-Serwery DHCP i DNS muszą być niezależne od serwera WDS.
+P-Wykorzystując zdalną instalację systemu Windows:
+T-Jeden serwer umożliwia instalację wielu wersji systemu (użytkownik może sam wybrać).
+N-Jeden serwer pozwala na instalację tylko jednej wersji systemu (np. Ultimate)
+T-Pliki z obrazem systemu muszą być dostępne na serwerze.
+N-Do komputera na którym instalowany jest system trzeba włożyć płytę z obrazem systemu (ale konfiguracja instalowanego systemu jest pobierana przez sieć)
+P-Jakie warunki muszą być spełnione by można było pomyślnie zainstalować usługę WDS?
+N-Sieć musi być połączona z Internetem.
+T-Komputer musi być członkiem domeny Active Directory.
+T-W sieci musi znajdować się serwer DNS.
+T-W sieci musi znajdować się serwer DHCP.
+P-Aby możliwe było wykorzystanie Windows Deployment Services konieczny jest:
+T-Serwer DHCP wskazujący lokalizację pliku uruchomieniowego.
+N-Serwer FTP z którego będą pobierane pliki instalacyjne.
+N-Obraz instalacyjny z systemem Windows 7 w edycji co najmniej Professional.
+T-Obraz środowiska Windows PE.
+P-Mechanizm WDS umożliwia:
+N-Zdalną instalację systemów z obrazów płyt .iso
+T-Zdalną instalację systemów Windows.
+N-Zdalne zarządzanie zainstalowanymi systemami Windows.
+T-Zdalną instalację systemów z obrazów płyt .wim
+P-Wskaż poprawne zdania dotyczące WDS:
+T-Proces instalacji systemu na komputerze klienckim rozpoczyna się od przesłania po sieci obrazu bardzo uproszczonego systemu operacyjnego służącego do uruchomienia głównego instalatora.
+N-Serwer w momencie instalowania usługi WDS automatycznie instaluje obrazy płyt używane do instalacji systemu po sieci.
+T-Aby zainstalować na komputerze klienckim system Windows, używając mechanizmu WDS, należy ustawić w BIOSie bootowanie rozpoczynające się od karty sieciowej.
+N-Używając WDS możemy instalować po sieci każdy system z rodziny Microsoft Windows i Linux.
+P-Wskaż poprawne zdania dotyczące WDS:
+N-Serwer w momencie instalowania usługi WDS automatycznie instaluje obrazy płyt używane to instalacji systemu po sieci
+T-Proces instalacji systemu na komputerze klienckim rozpoczyna się od przesłania po sieci obrazu bardzo uproszczonego systemu operacyjnego służącego do uruchomienia głównego instalatora
+N-Używając WDS możemy instalować po sieci każdy system z rodziny Microsoft Windows i Linux
+T-Aby zainstalować na komputerze klienckim system windows używając mechanizmu WDS należy ustawić w biosie boot'owanie rozpoczynające się od karty sieciowej
+P-Serwer DHCP w systemie windows 2008 server:
+N-jest zainstalowany w systemie po instalacji
+T-jest dostępny w systemie jako rola
+T-umożliwia tworzenie zakresu adresów, z których mają być przydzielane adresy klientom
+N-jest w całości zarządzany tylko przy pomocy konsolowego narzędzia
+P-Serwer DNS umożliwia:
+N-dynamiczne przydzielanie adresów IP komputerom w sieci lokalnej
+N-tłumaczenie adresów domenowych na adresy MAC
+N-tłumaczenie adresów IP na adresy MAC
+T-tłumaczenie adresów domenowych na adresy IP
+P-Serwer DHCP umożliwia:
+T-Automatyczną aktualizację adresu serwera DNS
+N-Zamianę tekstowego adresu URL na adres IP
+T-Dynamiczne przyznawanie adresu IP hostom
+N-Dynamiczne nadawanie adresu MAC hostom
+P-Za pomocą polecenia nslookup w systemie Windows możemy uzyskad informacje o:
+T-Adresie IP serwera
+T-Aliasach serwera
+N-Lokalizacji geograficznej serwera
+N-Czasu odpowiedzi serwera

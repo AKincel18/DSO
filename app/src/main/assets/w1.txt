@@ -1,0 +1,180 @@
+﻿P-Wykonanie kwerendy do wyszukiwania wyłączonych kont użytkowników jest możliwe za pomocą:
+N-polecenia ds-query
+T-polecenia dsquery
+T-konsoli Active Directory Users and Computers
+N-polecenia ds-get
+P-Role FSMO można:
+T-Przejmować
+N-Filtrować
+N-Nadpisywać
+T-Transferować
+P-W jednostkach organizacyjnych (Organization Unit) można utworzyć:
+T-Użytkownika
+T-Grupę
+T-Komputer
+T-Drukarkę
+P-Za pomocą jakiego polecenia można dodać obiekt określonego typu (korzystając z wiersza poleceń) w Active Directory
+N-dscreate user
+T-dsadd user
+T-dsadd computer
+N-dscreate computer
+P-Wybierz prawidłowe odpowiedzi dotyczące struktury Active Directory:
+T-Jeśli domeny wchodzące w skład lasu mają nieciągłe nazwy DNS, tworzą kilka odrębnych drzew w obrębie lasu
+T-Drzewo posiada zawsze przynajmniej jedną domenę - domenę najwyższego poziomu (ang. root) - korzeń drzewa
+N-Drzewo domen - domeny potomne mogą, ale nie muszą zawierać nazwy bezpośredniej domeny nadrzędnej
+N-Las jest zestawem przynajmniej dwóch lub więcej drzew, które formują zwartą, ciągłą przestrzeń nazw.}
+P-Do czego służy polecenie dsget?
+N-Wyświetla różne właściwości grupy, włącznie z członkami grupy w katalogu
+N-Wyświetla właściwości komputera w katalogu.
+T-Umożliwia dodawanie użytkowników, grup, komputerów, kontaktów i jednostek organizacyjnych do usługi Active Directory.
+N-Umożliwia tworzenie, modyfikowanie i usuwanie obiektów katalogu.}
+P-Jakie obiekty można dodawać za pomocą polecenia dsadd?
+T-Grupy
+T-Użytkowników
+T-Jednostki organizacyjne
+N-Pliki
+P-Wskaż zdania prawdziwe dotyczące usługi Active Directory:
+T-Struktura Active Directory ma strukturę drzewiastą.
+T-Liśćmi drzewa mogą być użytkownicy, grupy i 
+N-Nie ma możliwości nadania określonemu użytkownikowi praw do zarządzania użytkownikami w jednostce organizacyjnej bez nadawania (...)
+T-Możliwe jest kopiowanie użytkowników.}
+P-Program dsget.exe:
+T-wymaga praw administratora do działania
+N-może być uruchomione w graficznym interfejsie użytkownika za pomocą odpowiedniej opcji linii poleceń.
+T-ma tekstowy interfejs użytkownika.
+N-umożliwia tworzenie jednostek organizacyjnych.}
+P-Jakie możliwości daje użycie polecenia dsadd (jako polecenie dla Active Directory)? 
+N-Nie może dodawać obiektu typu Computer do katalogu
+T-Nie może dodać obiektu typu Doman Service do katalogu.
+T-Może dodawać obiekt typu Computer do katalogu.
+N-Może dodać obiekt typu Domain Service do katalogu.}
+P-Różnica pomiędzy zaufaniem do domen forest i external polega na:
+N-Zaufanie typu forest pozwala na korzystanie z zasobów tylko w obrębie danego drzewa, zaś external we wszystkich drzewach.
+T-Zaufanie typu external pozwala większej liczby domen na korzystanie ze swoich zasobów niż typ forest.
+T-Zaufanie typu forest pozwala na korzystanie z zasobów tylko w obrębie drzew połączonych tego typu zaufaniem, zaś external nie musi (...)
+N-Zaufanie typu external jest dwukierunkowe, typu forest tylko jednokierunkowe.}
+P-Polecenie dsquery:
+N-Zgodnie z określonymi kryteriami wykonuje kwerendę dotyczącą drzewa usługi DNS.
+N-Jest równoważne poleceniu dsget.
+N-Wykonuje kwerendę na dowolnej bazie danych.
+T-Zgodnie z określonymi kryteriami wykonuje kwerendę dotyczącą usługi Active Directory.}
+P-Dodać grupę można za pomocą:
+T-Konsoli "Active directory users and computers".
+N-Polecenia Addgroup.
+T-Polecenia dsadd group.
+N-Polecenia adadd group.}
+P-Jakie występują typy zaufania w Active Directory:
+T-Lasu (forest)
+N-Wewnętrzne (internal)
+T-Zewnętrzne (external)
+N-Płatka śniegu (snowflake)}
+P-Struktura Active Directory:
+T-Podstawową jednostką jest tzw. liść, który położony jest w kontenerze w Active Directory nazywanym jednostką centralną.
+T-Liście i kontenery zorganizowane są w domeny.
+N-Domeny zorganizowane w drzewo reprezentowane są w rożnych przestrzeniach adresowych DNS.
+N-Domena może istnieć samodzielnie, nie musi istnieć w jakimś drzewie i jakimś lesie
+P-Polecenie dsadd może posłużyć do:
+N-Modyfikowania obiektów wewnątrz AD.
+T-Dodawania grup do AD.
+T-Dodawania użytkowników do AD.
+N-Wyszukiwania informacji o obiektach AD.}
+P-Za pomoca konsoli Active Directory Users and Computers wykonano polecenie "dsadd Ala -pwd makota". Wskaż poprawne odpowiedzi.
+N-Jeżeli użytkownik "Ala" nie istnieje w systemie wykonanie polecenia nie powiedzie się.
+T-Powodzenie operacji jest zależne od poziomu uprawnień wykonującego go użytkownika.
+T-W przypadku powodzenia operacji zostanie utworzony nowy użytkownik o nazwie "Ala" i haśle "makota".
+N-W przypadku powodzenia operacji hasło istniejącego użytkownika "Ala" zostanie zmienione na "makota".}
+P-Za pomoca polecenia dsadd można:
+T-Utworzyć grupę zabezpieczeń.
+T-Utworzyć jednostkę organizacyjną.
+T-Utworzyć konto użytkownika.
+T-Utworzyć grupę dystrybucyjną.}
+P-Czym jest Active Directory?
+N-Narzędzie certyfikujące w Windows Server 2003.
+T-Usługą w systemie Windows, która udostępnia środki pozwalające zarządzać tożsamościami i relacjami.
+T-Jest to zbiór funkcji, która upraszczają zarządzanie użytkownikami i komputerem.
+N-Nakładka na system Linux pozwalająca zarządzać komputerem.}
+P-Poznane w czasach laboratorium narzędzia pozwalające na zarządzanie Active Directory to:
+N-netsh
+T-dsget
+T-dsadd
+T-Przystawka Active Directory Users and Computers
+P-Ile kontrolerów może działać dla domeny w usłudze Active Directory?
+T-więcej niż 2
+T-2
+T-1
+N-domena może nie posiadać komputera
+P-Które z typów relacji zaufania są dwukierunkowe?
+T-Lasu (forest)
+T-Zewnętrzne (external)
+T-Obszaru (realm)
+T-Skrótu (shortcut)}
+P-Aby uruchomić na serwerze usługę Active Directory należy:
+N-Utworzyć użytkownika do zarządzania usługą.
+T-Zainstalować serwer DNS.
+T-Dodać rolę Active Directory Domain Services.
+N-Zainstalować serwer DHCP.}
+P-Co to jest jednostka organizacyjna (Organization Unit, OU)?
+N-Pojedynczy komputer wchodzący w skład domeny Active Directory.
+N-Serwer pracujący pod kontrolą systemu Windows 2008 Server.
+T-Kontener wykorzystywany do grupowania obiektów wewnątrz domeny w logiczne grupy, na których wykonywane są zadania administracyjne (...)
+N-Serwer służący do zarządzania protokołem ldap
+P-Jakie obiekty mogą być modyfikowane za pomocą usługi Active Directory Sites and Services?
+T-Łącza lokacji i lokacje.
+N-Tylko serwery i lokacje.
+N-Serwery, lokacje, replikacje.
+T-Serwery, podsieci, ustawienia usługi katalogowej (NTDS)
+P-Wskaż zdania prawdziwe:
+N-Usługa Active Directory dostępna jest w systemach Windows od wersji Vista.
+T-Za pomocą polecenia dsadd user możliwe jest dodanie użytkownika do Active Directory.
+T-Za pomocą polecenia dsadd group możliwe jest dodanie grupy do Active Directory.
+T-Szablon konta użytkownika to konto zawierające wzorcowy zestaw najczęściej wykorzystywanych właściwości, odpowiednich dla danej grupy użytkowników.}
+P-Które polecenie umożliwia usuwanie obiektów określonego typu?
+N-dsmod
+N-csvde
+N-dsadd
+T-dsrm
+P-W Windows Server 2008 - Active Directory administrator edytując właściwości obiektu klasy Użytkownik, w zakładce Konto ma możliwość:
+N-Wyznaczenia daty i godziny, w której konto Użytkownika zostanie usunięte z systemu.
+T-Zablokowania Użytkownikowi możliwości samodzielnej zmiany hasła.
+T-Ustalenia godzin w których Użytkownik będzie mógł lub nie będzie mógł zalogować się do systemu.
+T-Określenia do jakich komputerów znajdujących się w domenie Użytkownik ma prawo do zalogowania się.
+P-Za pomocą polecenia dsadd w systemie Windows można:
+N-Zmodyfikować konto użytkownika
+T-Utworzyć jednostkę organizacyjną
+T-Utworzyć konto użytkownika
+N-Przenieść jednostkę organizacyjną z jednej domeny do drugiej
+P-Wskaż najważniejsze funkcje Active directory:
+T-Obsługa LDAP
+T-Obsługa DNS
+T-Obsługa zabezpieczeń
+T-Zgodność z TCP/IP
+P-W jednostce organizacyjnej można umieszczać:
+T-Komputery
+T-Użytkowników
+T-Inne jednostki organizacyjne
+N-Obiekty z innych domen niż domena jednostki organizacyjnej
+P-Wskaż poprawne stwierdzenia na temat uprawnień w Active Directory:
+N-Uprawnienia nie mogą być dziedziczone
+T-Istnieje możliwość nadania uprawnień administratora na danym komputerze bez posiadania uprawnień administratora w domenie
+N-Aby skopiować użytkownika, jego konto musi być uprzednio wyłączone
+T-Użytkownik może należeć do wielu grup
+P-Jakie protokoły są wykorzystywane przez Active Directory?
+N-SSH
+T-LDAP
+T-Kerberos
+T-DNS
+P-Do czego służy polecenie dsadd?
+N-Dodaje możliwość zdalnego dostępu do elementu serwisu Active Directory
+N-Dodaje atrybut do elementu serwisu Active Directory
+N-Dodaje połączenie do zarządzania elementem serwisu Active Directory
+T-Dodanie określony typ elementu do serwisu Active Directory
+P-Wskaż prawdziwe zdania dotyczące jednostek organizacyjnych (Organizational Units):
+T-Mogą tworzyć strukturę hierarchiczną
+N-Grupują wyłącznie użytkowników
+T-Mogą być wykorzystane do delegowania uprawnień administracyjnych
+N-Nie mogą być w sobie zagnieżdżane
+P-Za pomocą konsoli Active Directory Users and Computers wykonano polecenie: „dsmod group Alfa -addmbr Beta”. Wskaż wszystkie poprawne odpowiedzi.:
+N-W przypadku powodzenia operacji do grupy Beta zostanie dodany obiekt Alfa.
+T-W przypadku powodzenia operacji do grupy Alfa zostanie dodany obiekt Beta.
+T-Powodzenie operacji jest zależne od poziomu uprawnień wykonującego go użytkownika.
+T-Obiekt o nazwie Beta może reprezentować użytkownika.}

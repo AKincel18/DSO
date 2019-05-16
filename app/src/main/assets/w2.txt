@@ -1,0 +1,175 @@
+﻿P-Na jakich poziomach w Active Directory mogą być przypisywane obiekty GPO?
+T-Lokalnie 
+N-Na poziomie lokacji
+T-Na poziomie domeny
+T-Na poziomie jednostki organizacyjnej
+P-Aby wyświetlić wynikowy zestaw zasad dla użytkownia Sysop należy użyć polecenia:
+N-gpresult /gpo Sysop
+N-gpresult /?
+T-gpresult /user Sysop
+N-gpresult /u Sysop
+P-Wskaż prawdziwe zdania dotyczące GPO
+N-Akronin GPO rozwija się jako Group Policy Operation
+T-Za pomocą GPO Standard Desktop można zabronić dostępu do Panelu Sterowania
+N-Dane jednego GPO mogą być przypisane tylko jednej jednostce organizacyjnej
+N-Nie da się wyłączyć stosowania zasad GPO danej jednostki organizacyjnej bez usuwania GPO lu łącza obiektu
+P-Gdzie w rejestrze systemowym można znaleźć wpisy wynikające z GPO?
+T-HKEY LOCAL MACHINE (HKLM)
+N-HKEY CLASSES ROOT (HKCR)
+T-HKEY CURRENT USER (HKCU)
+N-HKEY USERS (HKU)
+P-W jaki sposób można modyfikować domyślne przetwarzanie obiektów zasad grupy?
+T-Blokując dziedziczenie zasad grupy
+N-Definiując warunkowe wprowadzanie ustawień.
+T-Wyłączając przetwarzanie konkretnego łącza GPO
+T-Wyłączając nadpisywanie ustawień wprowadzanych przez konkretne łącze GPO.
+P-Group Policy Management Console umożliwia:
+N-Wszystkie funkcje konsoli Power Shell, oraz dodatkowo funkcje zarządzania obiektami GPO
+T-Stworzenie kopii zapasowej obiektów GPO
+T-Łatwiejsze zarządzanie obiektami GPO, dzięki graficznemu interfejsowi użytkownika
+N-Tworzenie logów każdej operacji użytkownika w wybranej przez administratora grupie
+P-System Windows w ramach zarządzania GPO umożliwia:
+T-Filtrowanie ustawień GPO - wyłączenie stosowania określonych zasad GPO
+T-Wymuszanie stosowania zasad GPO
+T-Przeglądanie wdrażania elementów GPO dla danej jednostki organizacyjnej
+T-Blokowanie dziedziczenia ustawień obiektów GPO
+P-Które narzędzia służą do tworzenia i zarządzania GPO?
+T-Konsola Group Policy Management
+N-narzędzie gpadd
+T-Group Policy Object Editor z Active Directory Users and Computers
+N-narzędzie gpomod
+P-GPO jest to: Wskaż wszystkie poprawne odpowiedzi.
+T-Zbiór ustawień, który określa jak będzie się zachowywał i wyglądał system, dla zdefiniowanych grup użytkowników.
+N-Narzędzie administracyjne, służące do zarządzania zasadami grup.
+N-Obiekt, mogący istnieć tylko lokalnie zawierający zasady działania systemu dla grup użytkowników.
+N-Zbiór obiektów zawierający ustawienia dotyczące zasad działania systemu, po jednym obiekcie na każdego użytkownika.
+P-W jaki sposób można wyznaczyć efektywne ustawienia dla obiektów GPO?
+N-Za pomocą polecenia gpoeffective
+N-Za pomocą Group Policy Preferences
+T-Za pomocą Group Policy Results Wizards
+T-Za pomocą polecenia gpresult
+P-Program "GPRESULT" służy do:
+N-Zmiany zasad GPO
+N-Zmiany efektywnych ustawień GPO
+N-Usuwania zasad GPO
+T-Przeglądania efektywnych ustawień GPO
+P-Które z podanych funkcji może pełnić narzędzie Group Policy Results w kontekście zasad grup?
+T-Generowanie raportów o wpływie zasad grupy na konkretnego użytkownika lub komputer.
+N-Rejestrowanie prób ominięcia lokalnych zabezpieczeń
+T-Wyświetlanie informacji o efektywnych ustawieniach dla obiektów jednostki organizacyjnej.
+N-Eksportowanie ustawień, aby umożliwić ich ponowne wdrożenie w dowolnym momencie.
+P-Które narzędzia służą do tworzenia i zarządzania GPO?
+N-Narzędzia gpmod
+T-Konsola Group Policy Management
+T-Group Policy Object Editor z Active Directory Users and Computers
+N-Narzędzie gpadd
+P-Diagnozujesz problem z ustawieniami Zasad Grupy w dużej domenie. chcesz się dowiedzieć, jakie ustawienia są stosowane dla danego komputera.
+N-Przeglądasz ustawienia zasad grupy w konsoli Active Directory Users and Computers
+T-Korzystasz z narzędzia gpresult
+T-Korzystasz z  "Group Policy Result" w konsoli Group Policy Management
+N-Nie jest możliwe uzyskanie takich informacji
+P-Jakimi narzędziami możesz konfigurować GPO?
+T-Group Policy Management Console
+T-Active Directory Sites and Services
+N-Remote Desktop Assistance
+T-Edytor obiektów zasad grup
+P-Jaki będzie wynik polecenia gpresult /user user1 w Windows Serwer 2008?
+N-Wyświetlenie rezultatu wykonania polecenia gpupdate dla użytkownika user1
+N-Nie ma takiego polecenia
+N-Wyświetlenie ustawień zmiennych globalnych użytkownika user1
+T-Wyświetlenie zasad grup dla użytkownika user1
+P-Wskaż prawdziwe zdania dotyczące Group Policy Objects
+N-Dany obiekt GPO można przypisać tylko do jednej jednostki organizacyjnej
+T-Zasady zawarte w GPO przypisanym do domeny są domyślnie dziedziczone przez jednostki organizacyjne tej domeny
+T-Do jednej jednostki organizacyjnej można przypisać wiele różnych obiektów GPO
+T-Zasady obiektów GPO przypisanych jednostkom podrzędnym domyślnie nadpisują zasady odziedziczone z GPO jednostek nadrzędnych
+P-Co się stanie, jeśli pewne ustawienia obiektu zasad grup ustawimy na poziomie domeny na pewną wartość, a na poziomie komputera ustawimy na przeciwną?
+T-Zastosowane zostanie ustawienie na poziomie "komputera"
+N-Wystąpu konflikt i zostanie zgłoszony błąd
+N-Poczas uruchamiania tego komputera losowo wybierana będzie wartość, która będzie się do niego stosować
+N-Zastosowane zostanie ustawienie ustalone na poziomie "domeny"
+P-Konsola Group Policy Managment
+T-Umożliwia raportowanie ustawień GPO
+T-Pozwala na łączenie jednostek organizacyjnych z GPO
+N-Jest domyślnie zainstalowana w każdej wersji Windowsa 7
+T-Pozwala zmienić ustawienia dziedziczenia GPO
+P-Zasady grup (GPO) przypisane danemu komputerowi:
+N-Dotyczą tylko administratoeów danego komputera.
+T-Obowiązują wszystkich użytkowników komputera
+N-Nie istnieją. Zasady grup mogą zostać przypisane jedynie użytkownikowi.
+T-Są stosowane podczas uruchamiania komputera
+P-Z jakich części składają się obiekty zasad grup (Group Policy Object)?
+N-Ustawienia systemu
+T-Ustawienia komputera
+T-Ustawienia użytkownika
+N-Ustawienie domyślne
+P-Poniższy skrypt vbs wykonany po zalogowaniu użytkownika: Set objNetowrk = Wscript.CreateObject("Wscript.Network") objNetwork.NapNetworkDrive "S.:"\ LondonPublic"
+N-Udostępni dysk S jako London LondonPublic
+T-Podmontuje zdalny zasób sieciowy
+T-Umożliwi dostęp do zdalnego zasobu sieciowego jako dysk S
+N-Utworzy nowy zasób sieciowy London LondonPublic
+P-Aby sprawdzić wynikowe ustawienia GPO należy skorzystać z polecenia:
+N-gpoutcome
+N-gpsummary
+N-gpupdate
+T-gpresult
+P-Jakie narzędzia służą do konfigurowania Group Policy:
+N-Narzędzi dsmod
+N-Konsola Active Directory Users and Computers
+N-Polecenie dsquery
+T-Konsola Group Policy Managment
+P-Czy dane GPO może być przypidane kilku różnym jednostkom organizacyjnym?
+T-Tak, może być przypisane, jeżeli te jednostki organizacyjne są zawarte w jednej domenie dla której jest przypisane GPO
+N-Nie, nie może być przypisane, jeżeli jednostki te są zawarte w jednej domenie dla której jest przypisane GPO.
+N-Nie, dane GPO zawsze jest przypisane tylko jednej jednostce organizacyjnej
+N-Dane GPO może być zawsze przypisane kilku różnym jednostkom organizacyjnym. W każdej sytuacji.
+P-Opcja "Zablokuj dziedziczenie zasad"
+T-blokuje obiekty zasad grupy, które są stosowane wyżej w hierarchii domen i jednostek organizacyjnych usługi Active Directory.
+N-może blokować obiekty zasad grupy, dla których włączono opcję "Nie zastępuj"
+T-Może być ustawiona w jednostkach organizacyjnych
+N-Może być ustawiona w poszczególnych obiektach zasad grupy
+P-Obiekt GPO może zostać przypisany bezpośrednio do:
+T-Domeny
+T-Jednostki organizacyjnej
+N-Konkretnego komputera
+N-Konkretnego użytkownika
+P-Wskaż poprawne zdania dotyczące dziedziczenia zasad grup w Windows Server 2008
+T-Jawne określenie ustawienia zasad grupy w kontenerze podrzędnym zastępuje ustawienie odziedziczone z kontenera nadrzędnego
+N-Ustawienia zasad, które są wyłączone, są dziedziczone jako wyłączone
+N-Po zaznaczenia pola wyboru "Nie zastępuj" (wymuszanie dziedziczenia) kontenery podrzędne są zmuszane do dziedziczenia zasad, chyba że zasady te wchdzą w konflikt z zasadami kontenerów podrzędnych
+N-Nieskonfigurowane ustawienia zasad w jednostce nadrzędnej może być dziedziczone przez jednostkę podrzędną
+P-Które z podanych funkcji może pełnić narzędzie Group Policy Results w kontekście zasad grup?
+T-Wyświetlanie informacji o efektywnych ustawieniach dla obiektów jednostki organizacyjnej.
+N-Eksportowanie ustawień, aby umożliwić ich ponowne wdrożenie w dowolnym momencie
+N-Rejestrowanie prób ominięcia lokalnych zabezpieczeń
+T-Generowanie raportów w wpływie zasad grupy na konkretnego użytkownika lub komputer
+P-Ustawienia Group Policy są aplikowane w sytuacji, gdy:
+T-Przy nawiązaniu połączenia VPN
+T-Użytkownik się loguje
+T-Co zadany czas
+T-Komputer jest uruchamiany
+P-Opcja "Zablokuj dziedziczenie zasad" w AD Users and Computers
+T-nie blokuje dziedziczenia w obiektach zasad grupy, dla których ustawiono wymuszenie dziedziczenia
+T-może być ustawiona tylko w domenach i jednostkach organizacyjnych
+N-może być ustawiona w domenach, jednostkach organizacyjnych oraz w poszczególnych obiektach zasad grupy
+N-może być ustawiona tylko w poszczególnych obiektach zasad grupy
+P-Za pomocą GPO można uzyskać:
+T-Przekierowanie folderu domowego "My Documents"
+T-Ograniczenie uprawnień dla wszystkich użytkowników, którzy są zalogowani na danym komputerze
+T-Ograniczenie uprawnień dla jednostki organizacyjnej
+T-Ograniczenie uprawnień polegające na zabronieniu dostępu do panelu sterowania
+P-Jak są dziedziczone uprawnienia wynikające z GPO?
+N-Nie są dziedziczone. Każdemu obiektowi należy nadać uprawnienia osobno.
+T-Są dziedziczone przez całą strukturę - jeśli dany obiekt ma rodzica, to jako domyślne przejmuje jego uprawnienia.
+N-Domyślnie nie są dziedziczone, aby aktywować dziedziczenie należy dla OU ustawić opcję "Allow Privileges Inherintance"
+N-Dzieci dziedziczą jedynie najmniej restrykcyjne uprawnienia swoich rodziców
+P-Ustawienia Group Policy dla kont użytkowników mogą zawierać:
+T-Skrypty logowania
+T-Konfigurację ustawień pulpitu
+T-Przekierowanie folderu
+N-Prawa do dostępu do zasobów lokalnych
+P-Za pomocą GPO można:
+T-Zabronić dostepu do Panelu Sterowania
+T-Zamontować folder sieciowy jako dysk
+N-Usuwać kopmputery z domeny.
+T-Wykonywać dedykowane skrypty podczas logowania użytkownika.

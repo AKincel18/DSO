@@ -1,0 +1,161 @@
+﻿P-Zaznacz wszystkie poprawne stwierdzenia dotyczące rozwiązania LAMP: 
+N-Konfiguracja baz danych może odbywać się wyłącznie poprzez narzędzie phpMyAdmin., 
+N-MySQL pozwala na wykonywanie kodu zapisanego w języku PHP na stronie wwww., 
+T-Funkcją MySQL jest zarządzanie bazą danych., 
+T-Podstawową funkcją serwera Apache jest przesyłanie do klienta treści plików znajdujących się na dysku przy wykorzystaniu protokołu HTTP., 
+P-Zaznacz wszystkie poprawne stwierdzenia dotyczące rozwiązania LAMP: 
+N-Kod PHP wewnątrz pliku z rozszerzeniem .html może znajdować się pomiędzy znacznikiem <php> oraz znacznikiem </php>., 
+T-Kod PHP wewnątrz pliku z rozszerzeniem .php może znajdować się pomiędzy znacznikiem <? oraz znacznikiem ?>., 
+T-Pliki konfiguracyjne serwera Apache znajdują się w katalogu /etc/apache2/, 
+N-phpMyAdmin jest narzędziem do konfiguracji w trybie tekstowym., 
+P-Zaznacz wszystkie poprawne stwierdzenia dotyczące rozwiązania LAMP: 
+N-Elementy LAMP to Apache, MySQL i Prolog
+T-Można powiedzieć, że dynamiczna strona internetowa stworzona w PHP na Linuksie, korzystająca z serwera Apache, z bazą danych MySQL jest opartą o LAMP.
+N-Jako język programowania stron w LAMP można wykorzystać wyłącznie PHP., 
+T-Elementy LAMP zostały stworzone jako osobne rozwiązania, ale razem stanowią popularną platformę systemową.
+P-Zaznacz wszystkie poprawne stwierdzenia dotyczące rozwiązania LAMP: 
+N-Kod w HTML wymaga kompilacji zanim zostanie umieszczony na serwerze.
+N-Narzędzie phpMyAdmin służy do konfiguracji serwera Apache.
+T-MySql może być użyty jako serwer bazy danych.
+T-PHP może być użyty do tworzenia stron dynamicznych.
+P-Zaznacz wszystkie poprawne stwierdzenia dotyczące rozwiązania LAMP: 
+N-Tylko administrator może korzystać z narzędzia phpMyAdmin.
+N-PostgreSQL może być użyty jako język skryptowy do tworzenia stron dynamicznych.
+N-Kod w PHP wymaga kompilacji zanim zostanie umieszczony na serwerze.
+N-ZOSTAWIĆ PUSTE
+P-Wskaż zdania prawdziwe dotyczące języka PHP
+N-PHP wymaga by zmiennym nadawać typy.
+T-Nazwy zmiennych zaczynają się znakiem dolara.
+N-Jeśli kod PHP jest połączony ze znacznikami HTML, to musi się znajdować w pliku o rozszerzeniu phtml.
+N-Skrypt MUSI znajdować się w znacznikach <?php ?> (żadnych innych)
+P-Wskaż zdania prawdziwe dotyczące języka PHP
+N-Funkcja mysql_query() zwraca wynik w formie tablicy stringów.
+T-Skrypty PHP w typowych rozwiązaniach wykonywane są po stronie serwera.
+N-W pliku .php może wystąpić tylko jeden blok ograniczony znacznikami <? i ?>.
+T-PHP jest językiem interpretowanym.
+P-Język PHP: 
+N-Jest językiem kompilowanym
+T-Posiada biblioteki umożliwiające dostęp do bazy danych np. MySQL.
+T-Może być przeplatany z kodem HTML.
+N-Jest statycznie typowany.
+P-Język PHP: 
+T-może być przeplatany z językiem HTML.
+N-wymaga deklarowania zmiennych.
+T-nie wymaga deklarowania zmiennych.
+T-{wymaga, aby każda zmienna była poprzedzona znakiem $.
+P-Każda zmienna w PHP poprzedzona jest znakiem:
+N-%
+N-#
+N-<?
+T-$
+P-W jaki sposób w języku PHP można odczytać dane (lub ich część) przesłane przez formularz na stronie internetowej (pobrać dane z formularza)?
+T-Używając tablicy $_POST
+N-Używając tablicy $_SEND_DATA
+T-Używając tablicy $_GET
+T-Używając tablicy $_REQUEST
+P-W jaki sposób w języku PHP można odczytać dane (lub ich część) przesłane przez formularz na stronie internetowej (pobrać dane z formularza)?
+N-Używając tablicy $_DATA
+N-Używając tablicy $_RESPONSE
+N-ZOSTAWIĆ PUSTE
+N-ZOSTAWIĆ PUSTE
+P-Skrypty PHP:
+N-Są wykonywane po stronie przeglądarki internetowej klienta.
+T-Mogą zostać osadzone w plikach HTML.
+T-ZAWSZE rozpoczynają się od: <?php .
+T-Mogą być zdefiniowane w osobnych plikach, bez osadzania w kodzie HTML.}
+P-Od jakich elementów systemu pochodzi określenie LAMP?
+N-Linux, Apache, McEdit, Perl
+T-Linux, Apache, MySQL, Perl
+N-Linux, Access, McEdit, PHP
+T-Linux, Apache, MySQL, Python
+P-Od jakich elementów systemu pochodzi określenie LAMP?
+N-Linux, Access, MySQL, PHP
+N-ZOSTAWIĆ PUSTE
+N-ZOSTAWIĆ PUSTE
+N-ZOSTAWIĆ PUSTE
+P-W skład LAMP wchodzi:
+N-PostgreSQL
+T-Linux
+T-Perl
+N-Windows
+P-Co może oznaczać „P” w skrócie LAMP?
+N-PostgreSQL
+T-Perl
+T-Python
+T-PHP
+P-Do poprawnego działania LAMP pod Linuxem potrzebny jest:
+T-PHP
+T-Apache
+T-MySQL
+T-Pakiety wiążące ze sobą pozostałe składniki.
+P-Jaki serwer www wchodzi w skład LAMP?
+N-MySQL.
+N-IIS
+T-Apache
+N-Zależy od konfiguracji
+P-Serwer Apache:
+T-Jest serwerem www.
+T-Można zainstalować osobno.
+N-Można zainstalować tylko razem z serwerem bazy danych MySQL oraz bibliotekami języka PHP.
+T-Współpracuje z interpreterem języka PHP po doinstalowaniu odpowiednich pakietów.}
+P-Moduł userdir serwera Apache umożliwia:
+N-Edycję ustawień dotyczących folderów znajdujących się w pliku konfiguracyjnym serwera Apache.
+T-Zakładanie stron poprzez dodawanie folderu public_html w katalogu domowym użytkownika.
+T-Proste dodawanie stron www użytkownikom systemu.
+N-Dostęp do założonych stron użytkownika poprzez adres http://localhost/?NAZWA_UZYTKOWNIKA}
+P-Przy prawidłowo działającym w domyślnej konfiguracji module userdir zawartość strony http://localhost/~joe to:
+T-zawartość folderu public_html w katalogu domowym użytkownika joe.
+N-zawartość folderu localhost na pulpicie użytkownika joe.
+N-zawartość folderu Joe na dysku C.
+N-zawartość folderu www w katalogu domowym użytkownika joe.}
+P-Po włączeniu w Apache modułu userdir, pliki umieszczone przez użytkownika "jan" w folderze "/home/jan/public_html" będą (...) :
+T-http://localhost/~jan
+N-http://localhost/home/jan/public_html
+N-http://localhost/jan
+T-http://127.0.0.1/~jan}
+P-Które z podanych niżej operacji są prawidłowe, aby włączyć dowolny moduł w serwerze Apache?
+N-Skorzystanie z polecenia /etc/init.d/apache2 restart
+T-Utworzenie łącza symbolicznego w katalogu mods-enabled do pliku z katalogu mods-available.
+T-Skorzystanie z polecenia 'a2enmod'
+N-Skorzystanie z polecenia 'anenmod < nazwa_modulu >'
+P-Które z podanych niżej operacji są prawidłowe, aby włączyć dowolny moduł w serwerze Apache?
+N-Skorzystanie z polecenia /etc/init.d/apache2 force-reload
+N-ZOSTAWIĆ PUSTE
+N-ZOSTAWIĆ PUSTE
+N-ZOSTAWIĆ PUSTE
+P-Jakim poleceniem można zrestartować serwer Apache w celu odświeżenia konfiguracji?}
+T-/etc/init.d/apache2 restart
+T-/etc/init.d/apache2 stop && /etc/init.d/apache2/start
+N-/etc/init.d/apache2 refresh
+N-apache2-restart
+P-Konfiguracja serwera Apache w systemie Ubuntu Server:}
+N-wpływa na działający serwer zarz po zapisaniu pliku.
+T-w przypadku modułów serwera opiera się o dowiązania plików.
+T-znajduje się w folderze /etc/apache2.
+T-jest wstępnie przygotowana po zainstalowaniu serwera.
+P-Który z modułów odpowiada za włączenie obsługi języka PHP w serwerze Apache?
+N-status
+N-proxy
+T-php5
+N-userdir
+P-Który z modułów pozwala dodawać strony www w Apache poprzez utworzenie katalogu public_html w katalogu domowym?
+N-status
+N-proxy
+N-php5
+T-userdir
+P-Które moduły należy uruchomić, aby była możliwość dodawania stron www przez zwykłego użytkownika?
+N-usertrack
+N-proxy
+N-cache
+T-userdir}
+P-Do wybrania bazy danych w MySQL w języku PHP służy funkcja:
+N-mysql_db_name
+N-mysql_connect_db
+N-mysql_select_db
+T-mysqli_connect
+P-Jaki będzie wynik polecenia w języku skryptowym PHP:
+ mysql_connect("server:db", password, user) ?
+N-Połączenie się z bazą "db:server" na lokalnym komputerze.
+N-Połączenie się z bazą "server" na serwerze "db".
+N-Połączenie się z bazą "db" na serwerze "server".
+T-Zwrócenie błędu.

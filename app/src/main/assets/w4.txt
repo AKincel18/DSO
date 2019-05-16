@@ -1,0 +1,160 @@
+﻿P-Na komputerze posiadającym 5 dysków ma zostać zainstalowany system operacyjny Windows 2008 Server, który powinien zapewnić pracę z minimalnym prawdopodobieństwem utraty danych oraz łatwą administracją dyskami. Jaką konfigurację powinien wybrać administrator zakładając, że nie może użyć macierzy sprzętowych?
+N-wszystkie dyski spięte w mirror
+T-2 dyski spięte w mirror, pozostałe 3 dyski spięte w RAID5
+N-wszystkie 5 dysków spiętych w RAID5
+N-dyski spięte w spanned volume, 2 dyski spięte w mirror
+P-Maksymalna ilość dysków, które mogą ulec awarii bez utraty danych wynosi:
+N-1, dla 2 dysków pracujących w RAID0
+T-1, dla 3 dysków pracujących w RAID5
+T-1, dla 2 dysków pracujących w RAID1
+N-2, dla 3 dysków pracujących w RAID5
+P-RAID:
+T-jest stosowane w celu zwiększenia niezawodności
+N-wymaga minimum 3 dysków fizycznych do pracy
+T-jest stosowane w celu zwiększenia wydajności transmisji danych
+T-jest stosowane w celu powiększenia przestrzeni dostępnej jako jedna całość
+P-Mirrored volume w systemie Windows 2008 ma następujące właściwości:
+T-może chronić wolumen bootowalnego systemu operacyjnego Windows 2008
+N-do założenia wymaga 2 identycznych partycji na dyskach typu „basic disk”
+T-można go utworzyć na 2 dyskach
+N-wymaga zakupienia specjalnego kontrolera dysków
+P-Które z poniższych zdań na temat macierzy RAID5 są prawdziwe?
+T-RAID5 działa poprawnie do awarii więcej niż jednego dysku
+N-Macierz RAID5 wymaga minimum 4 dysków
+N-W n-dyskowej macierzy bity parzystości są na n-1 dyskach
+T-Macierz złożona z n jednakowych dysków ma objętość n-1 dysków
+P-Aby wykorzystać programowy RAID5 w systemie Windows 2008 Serwer należy posiadać komputer z zainstalowanymi
+N-trzema dyskami
+N-trzema dyskami oraz kontrolerem umożliwiającym systemowi Windows 2008 Server utworzenie programowej macierzy RAID5
+T-czterema dyskami
+T-pięcioma dyskami
+P-Dla których wolumenów prawdopodobieństwo utraty danych jest większe niż dla wolumenu prostego (simple volume):
+T-spanned volume
+T-striped volume
+N-RAID5
+N-mirrored volume
+P-Na ilu dyskach można założyć wolumen paskowany używając systemu operacyjnego Windows 2008?
+N-na 1
+T-na 2
+T-na 3
+T-na 4
+P-Zaznacz poprawne stwierdzenia dotyczące dysków podstawowych i dynamicznych w systemach Windows:
+N-Dyski podstawowe posiadają te same możliwości i funkcje co dyski dynamiczne jednak ich konfiguracja jest nieco trudniejsza
+N-Dyski dynamiczne dostępne są tylko w systemach windows z rodziny serwer
+T-Dyski podstawowe pozwalają na tworzenie podstawowych partycji, rozszerzonych partycji oraz dysków logicznych
+T-W niektórych wersjach systemu windows istnieje możliwość scalenia kilku oddzielnych dynamicznych dysków w jeden wolumen dynamiczny
+P-Na komputerze posiadającym 6 dysków zostanie zainstalowany system operacyjny Windows 2008 Server. Która konfiguracja pozwoli na pracę z najlepszym wykorzystaniem przestrzeni na dyskach zakładając, że nie można użyć macierzy sprzętowych?
+N-2 dyski spięte w mirror, 3 dyski spięte w RAID5
+T-2 dyski spięte w mirror, pozostałe 4 dyski spięte w wolumen paskowany
+N-wszystkie 6 dysków spiętych w RAID5
+N-utworzone 3 mirrory po 2 dyski każdy
+P-Na ilu dyskach można założyć wolumen paskowany używając systemu operacyjnego Windows 7?
+N-na 1
+T-na 2
+T-na 3
+T-na 5
+P-Na komputerze posiadającym 3 dyski zostanie zainstalowany system operacyjny Windows 2008 Server. Która konfiguracja pozwoli na pracę z najlepszym wykorzystaniem przestrzeni na dyskach zakładając, że nie można użyć macierzy sprzętowych?
+T-2 dyski spięte w mirror, jeden dysk bez zabezpieczeń
+N-3 dyski spięte w spanned volume
+N-wszystkie 3 dyski spięte w RAID5
+N-wszystkie dyski spięte w mirror
+P-Które konfiguracje RAID zwiększają wydajność (gdzie wzrost wydajności należy zrozumieć jako wzrost prędkości odczytu i zapisu)?
+T-RAID0
+T-RAID0+1
+T-RAID1+0
+N-RAID1
+P-W systemie Windows 7 na 5 dyskach za pomocą systemu operacyjnego został założony RAID5. Po pewnym czasie podczas pracy systemu 1 dysk uległ uszkodzeniu.
+N-odzyskiwanie danych będzie możliwe tylko z ostatniej archiwizacji
+N-jeśli uszkodzony dysk zostanie wymieniony na nowy to po ponownym uruchomieniu systemu dane zostaną automatycznie odzyskane
+N-danych nie będzie można odzyskać
+T-w systemie Windows 7 nie można użyć RAID5
+P-Konfiguracja RAID0:
+T-Pojemność wszystkich połączonych dysków jest równa N*pojemność_najmniejszego_dysku, gdzie N to liczba połączonych dysków.
+T-Nie dostarcza żadnego zabezpieczenia danych.
+T-Znajduje idealne zastosowanie gdzie wydajność jest ważniejsza od bezpieczeństaw danych.
+N-Pojemność wszystkich połączonych dysków jest równa pojemności najmniejszego z nich.
+P-Jakie są dostępne typy dysków dynamicznych w systemie Windows 2003?
+T-Mirror
+T-Spanned Volume
+T-Stripped Volume
+T-Simple Volume
+P-W konfiguracji RAID1:
+T-Dane zapisywane są na obu dyskach równocześnie.
+N-Dane są zapisywane na kolejnych dyskach bit po bicie, tak jak w przypadku RAID2.
+T-Efektywna pojemność wynosi 50% pojemności dysków.
+N-Wykorzystuje paskowanie dysków.
+P-Które z poniższych zdań opisują macierz RAID1 (mirroring)?
+N-RAID1 oferuje możliwość strippingu danych.
+N-Całkowita pojemność danych macierzy jest równa pojemności największego dysku.
+N-Pojemność macierzy jest równa pojemności najmniejszego dysku pomnożonego przez liczbę dysków.
+T-Odporność na awarię N-1 dysków w N-dyskowej macierzy.
+P-W przypadku którego typu konfiguracji dysków istnieje możliwość odzyskania danych jeśli jeden z dysków macierzy ulegnie awarii?
+N-konfiguracja typu stripped volume
+T-konfiguracja typu RAID5
+T-konfiguracja typu mirror
+N-konfiguracja typu spanned volume
+P-Mirrored volume w systemie Windows 2008 ma następujące właściwości:
+T-może chronić wolumen z bootowalnym systemem operacyjnym Windows 2008.
+N-może obejmować więcej niż 2 dyski.
+N-całkowicie likwiduje ryzyko utraty danych.
+T-nie można go założyć na dyskach typu "basic disk".
+P-Który z typów RAID zapewni bezpieczeństwo przy awarii jednego dysku?
+T-RAID0+1
+N-RAID0
+T-RAID1
+T-RAID5
+P-Wskaż poprawną odpowiedź:
+T-Przestrzeń macierzy w RAID0 jest zależna od rozmiaru najmniejszego z użytych dysków.
+N-RAID0+1 i RAID1+0 udostępniają 100% sumy pojemności wszystkich użytych dysków.
+N-RAID4 to macierz, której dane na dyskach są paskowane.
+T-Awaria dwóch dysków w RAID6 nie powoduje utraty danych.
+P-Programowy RAID5 w systemie Windows 2008 Server:
+N-można utworzyć już na 2 dyskach.
+T-można utworzyć na 4 dyskach.
+T-Zwiększa odporność systemu na awarie dysków.
+N-można założyć na dyskach typu "dynamic" lub basic.
+P-Jakie właściwości ma programowy RAID5 w systemie operacyjnym Windows 2008?
+T-można go założyć na 5 dyskach.
+N-umożliwia lepsze wykorzystanie przestrzeni na dyskach niż wolumen paskowany.
+N-zapewnia bezawaryjną pracę systemu.
+N-pozwala uniknąć fragmentacji systemu plików.
+P-Zaznacz zdania prawdziwe:
+N-RAID występuje wyłącznie sprzętowy.
+N-RAID występuje wyłącznie programowy.
+T-RAID występuje zarówno programowy jak i sprzętowy.
+N-Nie ma żadnej możliwości uruchomienia RAID w domowym komputerze PC.
+P-Które z podanych zdań są prawdziwe?
+N-RAID programowy pozwala na bezpośredni start systemu z macierzy dyskowej.
+T-RAID sprzętowy posiada wyższą wydajność od RAID programowego, gdyż przeliczaniem sum kontrolnych zajmuje się dedykowany kontroler.
+N-RAID programowy posiada większą kompatybilność z mniej popularnymi systemami operacyjnymi, gdyż wszystkie systemy operacyjne obsługują technologię RAID.
+T-RAID sprzętowy pozwala na bezpośredni start systemu z macierzy dyskowej.
+P-W systemie windows 2008 na 5 dyskach za pomocą systemu operacyjnego został założony RAID5 Po pewnym czasie podczas pracy systemu 2 dyski uległy uszkodzeniu.
+N-jeśli uszkodzone dyski zostaną wymienione na nowe to po ponownym uruchomieniu systemu dane zostaną automatycznie odzyskane
+N-odzyskiwanie danych będzie przezroczyste dla użytkowników jeśli dyski są typu hot swap
+N-w systemie Windows 2008 nie można użyć RAID5
+T-dane będzie można odzyskać tylko z archiwizacji, a nie z RAID5
+P-Jakie właściwości ma programowy RAID5 na systemie operacyjnym Windows 2008?
+T-można go założyć na pięciu dyskach
+N-umożliwia lepsze wykorzystanie przestrzeni na dyskach niż wolumen paskowany
+N-zapewnia bezawaryjną pracę systemu
+N-pozwala uniknąć fragmentacji systemu plików
+P-Konfiguracja RAID2:
+T-jest rozszerzeniem architektury RAID0
+T-dane są zapisywane na kolejnych dyskach macierzy bit po bicie
+N-cechuje się dużą wydajnością przy operacjach odczytu
+N-jest często stosowana w macierzach dyskowych
+P-Dyski typu podstawowego (ang. basic disks) pozwalają na:
+T-oznaczenie partycji jako aktywnej
+N-rozszerzenie woluminów prostych (ang. simple volume)
+T-tworzenie partycji podstawowej
+N-tworzenie woluminów RAID5
+P-Dla których wolumenów prawdopodobieństwo utraty danych jest mniejsze niż dla wolumenu łączonego (spanned volume):
+T-mirrored volume
+N-striped volume
+T-simple volume
+T-RAID5
+P-Jakie właściwości ma programowy RAID5 na systemie operacyjnym Windows 2008?
+N-zapewnia bezawaryjną pracę systemu
+T-chroni system przed awarią tylko jednego dysku
+N-pozwala uniknąć fragmentacji systemu plików
+N-umożliwia lepsze wykorzystanie przestrzeni na dyskach niż wolumen paskowany

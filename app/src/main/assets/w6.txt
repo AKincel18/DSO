@@ -1,0 +1,65 @@
+﻿P-Do funkcji Windows APi należą:
+T-CreateWindowsEx
+N-strcmp
+T-ShowWindow
+N-atoi
+P-Kiedy musi być zarejestrowana klasa okna w Windows API
+N-klasa okna może być zarejestrowana zarówno przed jak i po utworzeniu okna
+T-przed utworzeniem okna
+N-po utworzeniu okna
+N-klasa okna nie jest rejestrowana w Window API
+P-HWND:
+N-Jest strukturą przechowującą wskaźniki do poszczególnych okien aplikacji
+N-Jest wskaźnikiem na funkcję obsługującą komunikaty napływające do okna aplikacji
+T-Jest uchwytem okna aplikacji
+N-Jest funkcją pozwalającą na zdefiniowanie głównego okna aplikacji
+P-Aby wyświetlić krótki komunikat dla użytkownika przy użyciu okna modalnego można użyć funkcji
+N-ShowDialog(...)
+N-MsgBox(...)
+T-MessageBox(...)
+N-ShowModDialog(...)
+P-Kod programów pisanych z bezpośrednim wykorzystaniem Win32API musi zawierać:
+N-Instrukcję #include
+N-Wywołanie funkcji CreateWindowEx(...)
+T-Funkcję WinMain(...)
+N-Funkcję WINAPI(...)
+P-Windows API pozwala na:
+T-komunikację sieciową
+T-dostęp do systemu plików
+T-tworzenie interfejsu graficznego
+T-dostęp do rejestrów systemu
+P-MDi w API jest skrótem od:
+N-Media Download Interface
+N-Mass Data Interface
+T-Multiple Data Interface
+N-Multicolor Data Interface
+P-UpdateWindow:
+T-Jest funkcją wysyłającą komunikat do okna aplikacji informującym go o potrzebie przerysowania
+N-Jest domyślną funkcją obsługującą przerysowanie okna lub jego fragmentu
+N-Jest komunikatem wysyłanym do okna bezpośrednio po jego wyświetleniu
+N-Jest komunikatem wysyłanym do okna aplikacji informującym go o potrzebie przerysowania
+P-Czy dany przycisk został naciśnięty możemy sprawdzić poprzez:
+T-Porównanie uchwytu do przycisku wewnątrz procedury obsługi komunikatów przy zdarzeniu WM_COMMAND
+N-Porównanie adresu kontrolki przycisku
+T-Porównanie ID przypisanego do przycisku wewnątrz procedury obsługi komunikatów przy zdarzeniu WM_COMMAND
+N-Wykonanie procedury obsługi przerwania danego przycisku
+P-Wyświetlenie okna Message Box:
+N-Powoduje utworzenie dla niego nowego procesu w systemie
+T-Jest wywołaniem blokującym (blokuje wykonanie dalszej części kodu aż do zamknięcia Message Box'a)
+N-Polega na obsłudze odpowiedniego komunikatu w pętli obsługi komunikatów.
+T-Możemy uzyskać poprzez wywołanie kodu: MessageBox(NULL, L"Welcome to Win32 Application Development\n", NULL, NULL);
+P-DefWindowProc
+T-Jest domyślną funkcją obsługującą komunikaty napływające do okna aplikacji
+N-Jest wskaźnikiem na funkcję obsługującą komunikaty napływające do okna aplikacji
+N-Jest funkcją pozwalającą na zdefiniowanie głównego okna aplikacji
+N-Jest strukturą pozwalająca na m.in. zdefiniowanie głównego okna aplikacji
+P-Jakie rodzaje komunikatów mogą docierać do okna?
+T-zmiana rozmiaru okna
+T-pojedyncze bądź podwójne kliknięcie myszą w obszarze okna
+T-zmiana położenia okna
+T-naciśnięcie klawisza
+P-WNDCLASS/WNDCLASSEX
+N-Obsługuje kolejkę komunikatów napływających do okna aplikacji
+N-Jest strukturą przechowującą wskaźniki do poszczególnych okien aplikacji
+T-Jest strukturą pozwalającą zdefiniować np. kolory okna aplikacji
+N-Jest odpowiednikiem funkcji main() w programach pisanych w WinAPI

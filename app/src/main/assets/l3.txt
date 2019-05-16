@@ -1,0 +1,228 @@
+﻿P-Macierz typu raid 5 złożona z 3 dysków o jednakowej pojemności i parametrach:
+N-ma pojemność 2 dysków i nie jest odporna na awarię ani jednego dysku
+T-oferuje spowolniony odczyt w przypadku awarii 1 dysku
+N-ma pojemność 1 dysku i jest odporna na awarię maksymalnie 2 dysków
+T-ma pojemność 2 dysków i jest odporna na awarię maksymalnie 1 dysku
+P-W systemie Ubuntu, zakładając, że pliki blokowe /dev/sdb1 i /dev/sdb2 reprezentują partycje o rozmiarze 50MB, bezpośrednio po utworzeniu woluminu /dev/md0 poleceniem:
+ mdadm  --create  --verbose /dev/md0  --level=linear  --raid-devices=2
+ /dev/sdb1/dev/sdb2:
+T-wolumin /dev/md0 będzie miał wielkość 100MB
+N-wolumin /dev/md0 będzie miał wielkość 50MB
+N-wolumin /dev/md0 będzie można zamontować poleceniem mount /dev/md0 /mnt
+T-uszkodzenie dokładnie jednego spośród urządzeń /dev/sdb1 oraz /dev/sdb2 może spowodować utratę danych w woluminie /dev/md0
+P-Zaznacz prawdziwe stwierdzenia:
+T-Sprzętowy RAID oferuje większą wydajność poprzez zmniejszenie obciążenia CPU, gdyż przeliczaniem sum kontrolnych zajmuje się wówczas dedykowany kontroler.
+N-RAID sprzętowy jest niekompatybilny z dużą liczbą systemów operacyjnych, ze względu na zachowanie odróżniające taki RAID od pojedynczego dysku twardego.
+T-RAID software'owy oferuje możliwość łączenia różnych interfejsów takich jak ATA, SCSI, SATA, USB w obrębie jednej macierzy.
+N-Dla takich samych dysków RAID 6 oferuje większą szybkość zapisu niż RAID 0.
+P-RAID5 może składać się z następującej ilości dysków:
+N-2
+T-3
+T-4
+T-5
+P-RAID inaczej zwanym lustrzanym (mirroringiem) to:
+T-RAID1
+N-RAID2
+N-RAID3
+N-RAID5
+P-Jakie polecenie pozwoli na rozpoczęcie procedury tworzenia partycji:
+T-fdisk /dev/hda
+N-mkdir /dev/sda
+T-fdisk /dev/sdb
+N-mdadd /dev/sdb
+P-Jaka ilość dysków jest wystarczająca, aby zastosować RAID 5:
+N-1
+N-2
+T-3
+T-4
+P-Mając do dyspozycji 3 identyczne dyski twarde można stworzyć macierz RAID w konfiguracji:
+T-RAID 0
+T-RAID 5
+N-RAID 6
+N-RAID 10
+P-Trzy dyski zostały połączone w macierz RAID 0.
+N-Łączna przestrzeń dyskowa jest równa sumie przestrzeni, każdego z dysków
+T-Łączna przestrzeń dyskowa jest równa potrojonej przestrzeni dyskowej najmniejszego dysku
+T-Szybkość jest równa potrojonej szybkości najwolniejszego z dysków
+N-Szybkość jest równa szybkości najwolniejszego z dysków
+P-Zaznacz cele zastosowania macierzy RAID:
+T-Zwiększenie odporności na awarie
+T-Zwiększenie wydajności transmisji danych
+T-Powiększenie przestrzeni dyskowej, dostępnej jako jedna całość
+N-Dwukrotne zwiększenie całkowitej przestrzeni dyskowej
+P-Administrator podłączył do komputera dwa dyski twarde o pojemności 200GB każdy i połączył je w macierz RAID 1. Do komputera nie zostały podłączone żadne inne dyski. Które z poniższych twierdzeń są prawidłowe?
+T-Całkowita pojemność partycji dostępnych w systemie nie przekracza 200GB.
+N-Rozwiązanie takie zapewnia o wiele większą prędkość odczytu i zapisu danych niż macierz RAID 0.
+T-Rozwiązanie takie zapewnia o wiele większe bezpieczeństwo danych niż macierz RAID 0.
+N-W przypadku awarii jednego dysku użytkownik straci wszystkie swoje dane
+P-Zaznacz zdania prawdziwe dotyczące sprzętowej macierzy RAID:
+T-Macierz jest zupełnie przezroczysta, przez co z punktu widzenia Systemu Operacyjnego zachowuje się ona jak każdy inny dysk twardy
+N-mniejsza wydajność poprzez zwiększenie obciążenia CPU
+T-Minimalna liczba dysków potrzebna do stworzenia macierzy to 2
+N-Sprzętowa macierz RAID zawsze umożliwia przywrócenie danych w razie awarii jednego z dysków
+P-Zaznacz zdania prawdziwe dotyczące programowej macierzy RAID:
+N-Macierz jest zupełnie przezroczysta, przez co z punktu widzenia Systemu Operacyjnego zachowuje się ona jak każdy inny dysk twardy
+T-mniejsza wydajność poprzez zwiększenie obciążenia CPU
+T-Minimalna liczba dysków potrzebna do stworzenia macierzy to 2
+N-Programowa macierz RAID zawsze umożliwia przywrócenie danych w razie awarii jednego z dysków
+P-System Linux pozwala na:
+T-Tworzenie programowych macierzy RAID.
+T-Tworzenie wolumenów liniowych.
+N-Tworzenie partycji za pomocą polecenia "create"
+T-Tworzenie macierzy RAID 5.
+P-Woluminy liniowe w katalogu dev oznaczone są jako:
+T-md0,md1,...
+N-ma0,ma1,...,mb0,mb1,...
+N-raid0,raid1,...
+N-rda0,rda1,...,rdb0,rdb1,...
+P-Za pomocą polecenia mdadm można:
+T-utworzyć wolumin liniowy
+N-Sformatować partycję
+T-Sprawdzić konfigurację macierzy
+T-Zasymulować awarię woluminu
+P-Która z aplikacji umożliwia stworzenie partycji na twardym dysku?
+N-/etc/fstab
+T-/sbin/fdisk
+T-/sbin/cfdisk
+N-/etc/mtab
+P-Wskaż poprawne zdania dotyczące RAID.
+N-Polecenie „mdadm -C -v /dev/md0 --level=0 -n 2 /dev/sda1 /dev/sdb1” służy do stworzenia wolumenu liniowego na partycjach sda1 i sdb1.
+T-Polecenie „mdadm -C -v /dev/md0 --level=1 -n 2 /dev/sda1 /dev/sdb1” służy do stworzenia mirroru.
+T-Polecenie „mkfs -t ext3 /dev/md0” służy do sformatowania urządzenia.
+N-Wolumenu liniowego /dev/md0 nie można dodać do pliku /etc/fstab, aby była montowana przy starcie systemu operacyjnego.
+P-Które z wymienionych rodzajów macierzy RAID zapewniają mirroring:
+N-RAID 0
+T-RAID 1
+T-RAID 5
+T-RAID 10
+P-Które z wymienionych poleceń umożliwia zarządzanie macierzami RAID w systemie GNU/Linux:
+N-hdparm
+T-mdadm
+N-fdisk
+N-parted
+P-Celem wyłączenia automatycznego montowania urządzenia cdrom w systemie Linux należy:
+T-Odpowiednio zmodyfikować plik '/etc/fstab'.
+N-Wykonać polecenie 'nmount -n cdrom'.
+N-Wykonać polecenie 'nmount cdrom'.
+N-Odpowiednio zmodyfikować plik '/etc/amount'.
+P-Polecenie 'fdisk' w systemie Linux można wykorzystać do:
+T-tworzenia partycji.
+T-wypisania informacji o dysku.
+N-montowania dysku.
+N-tworzenia kopii zapasowej danych.
+P-Wskaż poprawne odpowiedzi dotyczące RAID5:
+T-Umożliwia odzyskanie danych w razie awarii jednego z dysków
+N-Składa się z minimum 2 dysków
+N-Odzyskiwanie danych w razie awarii odbywa się przy wykorzystaniu danych i kodów korekcyjnych zapisanych na jednym, specjalnie do tego przeznaczonym dysku
+T-W przypadku awarii dysku dostęp do danych jest spowolniony
+P-Wskaż poprawne odpowiedzi dotyczące mirroring-u:
+T-Polega na zapisywaniu tych samych danych na dwóch lub więcej dyskach jednocześnie
+N-W przypadku awarii co najmniej połowy z dysków nie ma możliwości odzyskania wszystkich danych
+T-Dostępna przestrzeń ma rozmiar najmniejszego nośnika
+T-Czas równoległego zapisu jest równy czasowi zapisu na najwolniejszym dysku
+P-Wskaż poprawne zdania dotyczące RAID5 w systemie Linux:
+N-Do utworzenia RAID5 potrzebne są co najmniej dwie partycje.
+N-Do utworzenia RAID5 można użyć maksymalnie trzech partycji.
+N-Do odtworzenia danych z uszkodzonej partycji zawsze wykorzystywana jest jedna, specjalnie do tego przygotowanej partycja.
+T-RAID5 jest całkowicie odporny na uszkodzenie jednej partycji (dane można w pełni odtworzyć).
+P-Wskaż poprawne zdania dotyczące RAID1 (mirror) w systemie Linux.
+T-Całkowita pojemność partycji połączonych w RAID1 jest taka jak pojemność najmniejszej z tych partycji.
+T-Do utworzenia RAID1 można wykorzystać trzy partycje.
+N-Zastosowanie RAID1 pozwala na zwiększenie szybkości zapisu i odczytu danych.
+T-RAID1 jest całkowicie odporny na uszkodzenie jednej partycji (dane można w pełni odtworzyć).
+P-Które z poniższych funkcji macierzy RAID zwiększają bezpieczeństwo danych?
+T-mirroring (lustrzane odbicie)
+N-stripping (paskowanie)
+N-macierze liniowe
+T-kontrola parzystości
+P-Trzy dyski, każdy o pojemności 1TB, połączyliśmy w macierz RAID5. Jaką pojemnośd ma uzyskany wolumien?
+N-0.5 TB
+N-1 TB
+T-2 TB
+N-3 TB
+P-Zaznacz poprawną odpowiedz dotyczącą RAID:
+T-RAID pozwala łączyć ze sobą dyski celem stworzenia pamięci masowej o dużej pojemności I niezawodności
+T-macierz RAID można stworzyć za pomocą sprzętowych kontrolerów oraz systemowych narzędzi
+N-do utworzenia RAID5 wystarczą dwa dyski
+N-nie da stworzyć się macierzy dyskowej z dwóch dysków
+P-Skrót RAID oznacza:
+T-Redundant Array of Independent Disks
+N-Redundant Array of Independent Drives
+N-Remote Array of Independent Disks
+N-Reserved Array of Independent Disks
+P-Macierz RAID 5 charakteryzuje się
+N-Zastosowaniem minimum 2 dysków
+T-Zastosowaniem minimum 3 dysków
+N-Odpornością na awarię dwóch dysków
+T-Zmniejszoną szybkością zapisu
+P-Macierz RAID 0 używana jest do:
+T-Poprawy wydajności zapisu
+N-Zabezpieczeniem danych przed awarią dysku kosztem dostępnego miejsca
+N-Zabezpieczeniem danych przed awarią dysku kosztem czasu dostępu
+N-Skrócenia czasu odbudowy macierzy
+P-Co jest zawartością pliku /proc/mdstat ?
+T-Konfiguracje RAID
+T-Aktualny stan macierzy
+N-Standardowe procery obsługi RAID
+N-Listę uruchomionych procesów
+P-Aby połączyć dwa wolumeny w wolumen liniowy użyjemy instrukcji:
+T-mdadm –create –verbose /dev/md0/  --level=linear –raid-dervices=2 /dev/sdb1 /dev/sdb2
+N-Mdfs –create –verbose /dev/md0/  --level=linear –raid-dervices=2 /dev/sdb1 /dev/sdb2
+N-mdadm –create –verbose /dev/md0/  --level=raid1 –raid-dervices=2 /dev/sdb1 /dev/sdb2
+N-mdadm –new –verbose /dev/md0/  --level=linear –raid-dervices=2 /dev/sdb1 /dev/sdb2
+P-Zaznacz poprawne twierdzenia na temat RAID 0 :
+N-Zapewnia ochronę przed utratą danych
+T-Zapewnia zwiększoną wydajność zapisu
+T-Zapewnia zwiększoną wydajność odczytu
+N-Do jej stworzenia potrzebne są minimalnie 3 dyski
+P-Na komputerze została stworzona macierz RAID 1 złożona z 3 partycji sda1, sdb1 i sdc1, wszystkie dyski pracuja poprawnie i nie są uszkodzone, co się stanie w momencie wywołania komendy:
+ 'mdadm /dev/md0 -- remove /dev/sda1'
+N-Partycja sda1 zostanie usunięta z macierzy md0
+T-Nic
+T-Partycja sda1 zostanie usunięta z macierzy jeśli przedtem wywołano komendę 'mdadm  --fail /dev/md0 /dev/sda1'
+N-Macierz md0 zostanie usunięta
+P-Wskaż typy macierzy dyskowych, które do ochrony danych wykorzystują sumy kontrolne
+N-RAID 0
+N-RAID 1
+T-RAID 3
+T-RAID 5
+P-Cztery dyski twarde o rozmiarach 200GB 200GB 150GB 150GB połączono w macierz typu striped volume:
+N-Macierz taka jest bardziej odporna na awarie niż pojedynczy dysk
+T-Sumaryczna szybkość takiej macierzy jest 4-krotnością szybkości najwolniejszego z dysków
+N-Macierz jest widziana w systemie jako pojedynczy dysk logiczny o rozmiarze 700GB
+T-Prawdopodobieństwo utraty danych jest większe niż dla analogicznej macierzy RAID 1
+P-Zaznacz prawdziwe zdania dotyczące RAID5.
+N-RAID5 polega na tworzeniu kopi danych na rożnych dyskach (mirroring)
+N-Macierz składa się z 5 lub więcej dysków
+N-Macierz składająca się z n dysków jest odporna na awarię n – 2 dysków
+T-Wszystkie powyższe odpowiedzi są nie poprawne
+P-W maszynie zainstalowana jest macierz RAID. Jeden z dysków podlega awarii. Zaznacz zdania prawdziwe.
+T-Dla macierzy RAID 5 po wymianie uszkodzonego dysku dane zostaną odbudowane.
+N-Macierz RAID 1 przestanie funkcjonować.
+T-Jeśli zainstalowane były 3 dyski, macierz RAID 1 pozwoli na dalsza pracę bez utraty danych.
+T-Macierz RAID 5 nie wymaga wymiany dysku na nowy przed wznowieniem pracy.
+P-Wpisanie polecenia fdisk /dev/hda oraz p spowoduje:
+N-sformatowanie dysku hda
+T-wypisanie listy partycji istniejących na dysku hda
+N-utworzenie na dysku hda partycji zajmującej całą dostępną przestrzeń
+N-uruchomienie systemu operacyjnego z dysku hda
+P-Wskaż cechy RAID 5:
+N-bity parzystości są zapisywane na specjalnie do tego przeznaczonym dysku
+N-szybkość dostępu do danych nie ulega zmianie w wypadku awarii jednego z dysków
+T-gwarantuje stuprocentowe bezpieczeństwo danych przy awarii jednego dysku
+T-jego zaletą jest szybki odczyt, jego wada to powolny zapis
+P-Co odróżnia macierze RAID programowe od sprzętowych?
+T-Obsługą macierzy programowych zajmuje się odpowiednie oprogramowanie, np. mdadm.
+N-Macierze programowe mają większą wydajność w porównaniu do sprzętowych.
+N-Problem awarii fizycznego nośnika w żaden sposób nie dotyczy macierzy programowych.
+N-W macierzach programowych problem awarii fizycznego dotyczy jedynie poziomu RAID 0.
+P-Wykonywanie jakich czynności związanych z macierzami RAID umożliwia polecenie „mdadm” w systemach z rodziny Linux?
+T-Podłączanie nowych urządzeń do macierzy.
+T-Generowanie zawartości plików konfiguracyjnych macierzy.
+T-Sprawdzanie statusu macierzy.
+T-Programowe symulowanie awarii w macierzy.
+P-Polecenie mount umożliwia: Wskaż wszystkie poprawne odpowiedzi
+T-Zamontowanie wszystkich partycji wymienionych w fstab
+N-Odmontowanie wszystkich partycji wymienionych w fstab
+N-Odmontowanie partycji
+T-Zamontowanie partycji
