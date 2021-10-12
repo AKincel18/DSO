@@ -1,5 +1,5 @@
 # DSO - Dedicated Operating Systems
-Mobile application which can help learning from the subject:  Dedicated Operating Systems. Quiz has two categories: linux and windows, each of them has 6 parts. There are two ways to learn: viewing all the questions and answers or a quiz by answering a randomly selected question. The application is in Polish language.
+Mobile application which can help learning from the subject:  Dedicated Operating Systems. Quiz has two categories: linux and windows, each of them has 6 parts. All questions and answers are in [*assets*](https://github.com/AKincel18/DSO/tree/master/app/src/main/assets) folder There are two ways to learn: viewing all the questions and answers or a quiz by answering a randomly selected question. The application is in Polish language.
 ## Screenshots
 <h4 align="left">Startup screen</h4>
 
