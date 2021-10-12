@@ -5,7 +5,7 @@
     android:id="@+id/ConstaintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AllQuestions">
+    tools:context=".activities.AllQuestionsActivity">
 
     <ScrollView
         android:layout_width="match_parent"

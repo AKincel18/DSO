@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activities.MenuActivity">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/quizWindowsButton"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="QUIZ"
+        android:text="@string/quiz_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.794" />
 
     <Spinner
-        android:id="@+id/spinner2"
+        android:id="@+id/windowsSpinner"
         android:layout_width="366dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -45,7 +45,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="LINUX"
+        android:text="@string/linux_txt"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -62,7 +62,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="WINDOWS"
+        android:text="@string/windows_txt"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,14 +71,14 @@
         app:layout_constraintVertical_bias="0.584" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/quizLinuxButton"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="QUIZ"
+        android:text="@string/quiz_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -87,7 +87,7 @@
         app:layout_constraintVertical_bias="0.246" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/linuxSpinner"
         android:layout_width="366dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -102,14 +102,14 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/allLinuxButton"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="ALL"
+        android:text="@string/all_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.989"
@@ -125,7 +125,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="ALL"
+        android:text="@string/all_txt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.989"
